@@ -1,0 +1,128 @@
+/* Header */
+.blog-header {
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+.blog-title {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Post */
+.blog-post {
+    margin-bottom: 30px;
+}
+
+.blog-post-header .options {
+    display: inline-block;
+    float: right;
+}
+
+.blog-post-title {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.blog-post-title:hover,
+.blog-post-title:active {
+  text-decoration: none;
+}
+
+.blog-post-meta {
+    display: block;
+    margin: auto;
+    text-align: right;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.blog-post-content {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+/* Nav button */
+.blog-btn {
+    margin-bottom: 30px;
+}
+
+/* Dropdown button with categories */
+.blog-btn-dropdown,
+.blog-btn-dropdown:focus {
+    color: white;
+}
+
+.blog-btn-dropdown.collapsed {
+    background-color: white;
+    color: #495057;
+}
+
+.blog-collapse {
+    width: 90%;
+    margin-top: 3px;
+}
+
+.blog-btn-category {
+    border-color: rgb(0,0,0);
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    color: #495057;
+}
+
+.blog-btn-category.focus {
+  box-shadow: none;
+}
+
+.blog-btn-category:hover {
+    background-color: white;
+    color: #495057;
+}
+
+/* Sidebar */
+.blog-sidebar-module-main {
+    margin-bottom: 30px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.blog-sidebar-module {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.blog-sidebar-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.blog-sidebar-category {
+    border-radius: 0;
+    border-width: 3px;
+    border-style: none none none solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: left;
+    color: black;
+}
+
+.blog-post-form {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.blog-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+}

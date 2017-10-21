@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1508351332">
+  <project timestamp="1508351332">
+    <package name="Alvo\Comment">
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/Comment/Comment.php">
+        <class name="Comment" namespace="Alvo\Comment">
+          <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="11" elements="14" coveredelements="12"/>
+        </class>
+        <line num="30" type="method" name="getAllComments" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="60" type="method" name="getComment" visibility="public" complexity="4" crap="4.13" count="3"/>
+        <line num="63" type="stmt" count="3"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="67" type="stmt" count="3"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="3"/>
+        <metrics loc="73" ncloc="47" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="11" elements="14" coveredelements="12"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/Comment/CommentController.php">
+        <class name="CommentController" namespace="Alvo\Comment">
+          <metrics complexity="5" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="5" elements="38" coveredelements="6"/>
+        </class>
+        <line num="17" type="method" name="init" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="20" type="stmt" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="28" type="method" name="getIndex" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="53" type="method" name="editItem" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="72" type="method" name="deleteItem" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <metrics loc="94" ncloc="64" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="5" elements="38" coveredelements="6"/>
+      </file>
+    </package>
+    <package name="Alvo\Comment\HTMLForm">
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/Comment/HTMLForm/AddCommentForm.php">
+        <class name="AddCommentForm" namespace="Alvo\Comment\HTMLForm">
+          <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="15" elements="28" coveredelements="16"/>
+        </class>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="21" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
+        <line num="59" type="stmt" count="2"/>
+        <line num="60" type="stmt" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="74" type="method" name="callbackSubmit" visibility="public" complexity="2" crap="3.08" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="89" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="0"/>
+        <line num="97" type="stmt" count="0"/>
+        <line num="99" type="stmt" count="0"/>
+        <metrics loc="101" ncloc="85" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="15" elements="28" coveredelements="16"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/Comment/HTMLForm/EditCommentForm.php">
+        <class name="EditCommentForm" namespace="Alvo\Comment\HTMLForm">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="35" coveredelements="35"/>
+        </class>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="21" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="28" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="37" type="stmt" count="2"/>
+        <line num="38" type="stmt" count="2"/>
+        <line num="39" type="stmt" count="2"/>
+        <line num="46" type="stmt" count="2"/>
+        <line num="47" type="stmt" count="2"/>
+        <line num="48" type="stmt" count="2"/>
+        <line num="55" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="66" type="stmt" count="2"/>
+        <line num="67" type="stmt" count="2"/>
+        <line num="68" type="stmt" count="2"/>
+        <line num="72" type="stmt" count="2"/>
+        <line num="82" type="method" name="callbackSubmit" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="87" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="98" type="stmt" count="1"/>
+        <metrics loc="100" ncloc="82" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="35" coveredelements="35"/>
+      </file>
+    </package>
+    <package name="Alvo\Page">
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/Page/FlatFileContentController.php">
+        <class name="FlatFileContentController" namespace="Alvo\Page">
+          <metrics complexity="5" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="7" elements="21" coveredelements="7"/>
+        </class>
+        <line num="22" type="method" name="render" visibility="public" complexity="5" crap="11.87" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <metrics loc="57" ncloc="41" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="7" elements="21" coveredelements="7"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/Page/PageRender.php">
+        <class name="PageRender" namespace="Alvo\Page">
+          <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+        </class>
+        <line num="28" type="method" name="renderPage" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <metrics loc="63" ncloc="42" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="14" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="Alvo\User">
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/Admin.php">
+        <class name="Admin" namespace="Alvo\User">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="11" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/AdminController.php">
+        <class name="AdminController" namespace="Alvo\User">
+          <metrics complexity="7" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="31" coveredelements="0"/>
+        </class>
+        <line num="25" type="method" name="init" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="36" type="method" name="isAdmin" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="55" type="method" name="getIndex" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="67" type="method" name="editUser" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="84" type="method" name="deleteUser" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <metrics loc="89" ncloc="70" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="31" coveredelements="0"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/User.php">
+        <class name="User" namespace="Alvo\User">
+          <metrics complexity="11" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="29" elements="39" coveredelements="34"/>
+        </class>
+        <line num="46" type="method" name="setPassword" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="62" type="method" name="verifyPassword" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="70" type="method" name="getUser" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="72" type="stmt" count="1"/>
+        <line num="73" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="85" type="method" name="getAllUsers" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="87" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="98" type="method" name="delete" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="100" type="stmt" count="1"/>
+        <line num="102" type="stmt" count="1"/>
+        <line num="103" type="stmt" count="1"/>
+        <line num="104" type="stmt" count="1"/>
+        <line num="105" type="stmt" count="1"/>
+        <line num="106" type="stmt" count="1"/>
+        <line num="107" type="stmt" count="1"/>
+        <line num="123" type="method" name="getGravatar" visibility="public" complexity="3" crap="3.58" count="1"/>
+        <line num="125" type="stmt" count="1"/>
+        <line num="126" type="stmt" count="1"/>
+        <line num="127" type="stmt" count="1"/>
+        <line num="128" type="stmt" count="1"/>
+        <line num="129" type="stmt" count="1"/>
+        <line num="130" type="stmt" count="0"/>
+        <line num="131" type="stmt" count="0"/>
+        <line num="132" type="stmt" count="0"/>
+        <line num="134" type="stmt" count="0"/>
+        <line num="136" type="stmt" count="1"/>
+        <metrics loc="138" ncloc="99" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="29" elements="39" coveredelements="34"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/UserController.php">
+        <class name="UserController" namespace="Alvo\User">
+          <metrics complexity="7" methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="6" elements="44" coveredelements="7"/>
+        </class>
+        <line num="25" type="method" name="init" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="45" type="method" name="getIndex" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="77" type="method" name="getPostLogin" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="100" type="stmt" count="0"/>
+        <line num="102" type="stmt" count="0"/>
+        <line num="103" type="stmt" count="0"/>
+        <line num="116" type="method" name="getPostCreateUser" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="118" type="stmt" count="0"/>
+        <line num="119" type="stmt" count="0"/>
+        <line num="120" type="stmt" count="0"/>
+        <line num="121" type="stmt" count="0"/>
+        <line num="123" type="stmt" count="0"/>
+        <line num="126" type="stmt" count="0"/>
+        <line num="129" type="stmt" count="0"/>
+        <line num="131" type="stmt" count="0"/>
+        <line num="132" type="stmt" count="0"/>
+        <line num="136" type="method" name="logout" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="138" type="stmt" count="0"/>
+        <line num="139" type="stmt" count="0"/>
+        <line num="140" type="stmt" count="0"/>
+        <metrics loc="141" ncloc="98" classes="1" methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="6" elements="44" coveredelements="7"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/UserUtils.php">
+        <class name="UserUtils" namespace="Alvo\User">
+          <metrics complexity="6" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="15" elements="23" coveredelements="16"/>
+        </class>
+        <line num="14" type="method" name="isLoggedIn" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <line num="29" type="method" name="login" visibility="public" complexity="4" crap="4.09" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="65" type="method" name="logout" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <metrics loc="69" ncloc="48" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="15" elements="23" coveredelements="16"/>
+      </file>
+    </package>
+    <package name="Alvo\User\HTMLForm">
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/HTMLForm/CreateUserForm.php">
+        <class name="CreateUserForm" namespace="Alvo\User\HTMLForm">
+          <metrics complexity="7" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="13" elements="27" coveredelements="15"/>
+        </class>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="38" type="method" name="anonymous function" complexity="1" crap="1" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="81" type="method" name="callbackSubmit" visibility="public" complexity="5" crap="11.77" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="99" type="stmt" count="0"/>
+        <line num="100" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="102" type="stmt" count="0"/>
+        <line num="103" type="stmt" count="0"/>
+        <line num="104" type="stmt" count="0"/>
+        <line num="106" type="stmt" count="0"/>
+        <line num="108" type="stmt" count="0"/>
+        <metrics loc="110" ncloc="90" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="19" elements="33" coveredelements="21"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/HTMLForm/UpdateUserForm.php">
+        <class name="UpdateUserForm" namespace="Alvo\User\HTMLForm">
+          <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="0" elements="38" coveredelements="0"/>
+        </class>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="80" type="method" name="loadUserData" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="96" type="method" name="callbackSubmit" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="99" type="stmt" count="0"/>
+        <line num="100" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="104" type="stmt" count="0"/>
+        <line num="105" type="stmt" count="0"/>
+        <line num="106" type="stmt" count="0"/>
+        <line num="107" type="stmt" count="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="112" type="stmt" count="0"/>
+        <line num="113" type="stmt" count="0"/>
+        <line num="114" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="0"/>
+        <line num="116" type="stmt" count="0"/>
+        <line num="122" type="stmt" count="0"/>
+        <line num="124" type="stmt" count="0"/>
+        <metrics loc="126" ncloc="84" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="0" elements="38" coveredelements="0"/>
+      </file>
+      <file name="/home/yooo/dbwebb-kurser/ramverk1/me/comment/src/User/HTMLForm/UserLoginForm.php">
+        <class name="UserLoginForm" namespace="Alvo\User\HTMLForm">
+          <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+        </class>
+        <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="61" type="method" name="callbackSubmit" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <metrics loc="77" ncloc="51" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="14" loc="1249" ncloc="909" classes="13" methods="39" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="336" coveredstatements="140" elements="375" coveredelements="154"/>
+  </project>
+</coverage>
