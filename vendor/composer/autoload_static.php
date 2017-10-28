@@ -4,14 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee
+class ComposerStaticInit4f81f90b2dbbd5457a095e6c5fbaa781
 {
     public static $files = array (
         '6b9cbd293adb7d895e163aebb2790539' => __DIR__ . '/..' . '/anax/common/src/functions.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'dfc9e5dd545737efbb98020db79bfa08' => __DIR__ . '/..' . '/mos/cimage/defines.php',
         '507fe79d3e285fab95fad400b8d42245' => __DIR__ . '/..' . '/mos/cimage/functions.php',
-        'ca0eb3a0c31b817977baa31daf875e80' => __DIR__ . '/..' . '/alvo/comment/src/functions.php',
         '4547053f209600a9ce9a93b96fbdb1be' => __DIR__ . '/../..' . '/config/functions.php',
     );
 
@@ -36,24 +35,21 @@ class ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee
         array (
             0 => __DIR__ . '/../..' . '/src',
             1 => __DIR__ . '/..' . '/anax/configure/src',
-            2 => __DIR__ . '/..' . '/anax/common/src',
-            3 => __DIR__ . '/..' . '/anax/url/src',
-            4 => __DIR__ . '/..' . '/anax/textfilter/src',
+            2 => __DIR__ . '/..' . '/anax/url/src',
+            3 => __DIR__ . '/..' . '/anax/di/src',
+            4 => __DIR__ . '/..' . '/anax/common/src',
             5 => __DIR__ . '/..' . '/anax/router/src',
-            6 => __DIR__ . '/..' . '/anax/page/src',
-            7 => __DIR__ . '/..' . '/anax/htmlform/src',
-            8 => __DIR__ . '/..' . '/anax/di/src',
-            9 => __DIR__ . '/..' . '/anax/session/src',
+            6 => __DIR__ . '/..' . '/anax/session/src',
+            7 => __DIR__ . '/..' . '/anax/textfilter/src',
+            8 => __DIR__ . '/..' . '/anax/database/src',
+            9 => __DIR__ . '/..' . '/anax/response/src',
             10 => __DIR__ . '/..' . '/anax/view/src',
-            11 => __DIR__ . '/..' . '/anax/response/src',
-            12 => __DIR__ . '/..' . '/anax/request/src',
-            13 => __DIR__ . '/..' . '/anax/database/src',
-            14 => __DIR__ . '/..' . '/alvo/comment/src',
+            11 => __DIR__ . '/..' . '/anax/request/src',
+            12 => __DIR__ . '/..' . '/anax/page/src',
         ),
         'Alvo\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-            1 => __DIR__ . '/..' . '/alvo/comment/src',
         ),
     );
 
@@ -92,10 +88,10 @@ class ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit6dedacaf300cd9b4fc43801bbb4f90ee::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4f81f90b2dbbd5457a095e6c5fbaa781::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4f81f90b2dbbd5457a095e6c5fbaa781::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4f81f90b2dbbd5457a095e6c5fbaa781::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit4f81f90b2dbbd5457a095e6c5fbaa781::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -12,9 +12,7 @@
         "mos/cimage": "^0.7.19",
         "anax/database": "^1.1",
         "anax/di": "^1.0",
-        "anax/page": "^1.0",
-        "anax/htmlform": "^1.0",
-        "alvo/comment": "^1.3"
+        "anax/page": "^1.0"
     },
     "autoload": {
         "psr-4": {

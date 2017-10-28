@@ -22,32 +22,6 @@ return [
                 return $obj;
             }
         ],
-        "bookController" => [
-            "shared" => true,
-            "callback" => function () {
-                $obj = new \Alvo\Book\BookController();
-                $obj->setDI($this);
-                return $obj;
-            }
-        ],
-        "userController" => [
-            "shared" => true,
-            "callback" => function () {
-                $obj = new \Alvo\User\UserController();
-                $obj->setDI($this);
-                $obj->init();
-                return $obj;
-            }
-        ],
-        "user" => [
-            "shared" => false,
-            "callback" => function () {
-                $obj = new \Alvo\User\User();
-                $obj->setDI($this);
-                $obj->setDb($this->get("db"));
-                return $obj;
-            }
-        ],
         "url" => [
             "shared" => true,
             "callback" => function () {
@@ -143,39 +117,22 @@ return [
                 return $obj;
             }
         ],
-        "comment" => [
+        "user" => [
             "shared" => true,
             "callback" => function () {
-                $obj = new Alvo\Comment\CommentController();
+                $obj = new \Alvo\User\UserController();
                 $obj->setDI($this);
                 $obj->init();
                 return $obj;
             }
         ],
-        "admin" => [
+        "question" => [
             "shared" => true,
             "callback" => function () {
-                $obj = new Alvo\User\AdminController();
+                $obj = new \Alvo\Question\QuestionController();
                 $obj->setDI($this);
                 $obj->init();
                 return $obj;
-            }
-        ],
-        "rem" => [
-            "shared" => true,
-            "callback" => function () {
-                $rem = new \Anax\RemServer\RemServer();
-                $rem->configure("remserver.php");
-                $rem->injectSession($this->get("session"));
-                return $rem;
-            }
-        ],
-        "remController" => [
-            "shared" => false,
-            "callback" => function () {
-                $rem = new \Anax\RemServer\RemServerController();
-                $rem->setDI($this);
-                return $rem;
             }
         ],
     ],

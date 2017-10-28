@@ -15,6 +15,8 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 
 // Add all resources to $app
 $di  = new \Anax\DI\DIFactoryConfig("di.php");
+// $di = new \Anax\DI\DIFactoryConfig();
+// $di->configure("di.php");
 //$app = new \Anax\App\AppDI();
 //$app = new \Anax\App\AppDIMagic();
 //$app->setDI($di);

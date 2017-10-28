@@ -12,28 +12,24 @@ return [
             "file" => __DIR__ . "/route2/internal.php",
         ],
         [
-            // Comments
-            "mount" => "comments",
-            "file" => __DIR__ . "/route2/commentsController.php",
+            "mount" => '',
+            "file" => __DIR__ . "/route/home.php",
+        ],
+        [
+            "mount" => "questions",
+            "file" => __DIR__ . "/route/questions.php",
+        ],
+        [
+            "mount" => "tags",
+            "file" => __DIR__ . "/route/tags.php",
+        ],
+        [
+            "mount" => "user",
+            "file" => __DIR__ . "/route/user.php",
         ],
         [
             "mount" => "admin",
-            "file" => __DIR__ . "/route2/admin.php",
-        ],
-        [
-            // Add routes from bookController and mount on book/
-            "mount" => "book",
-            "file" => __DIR__ . "/route2/bookController.php",
-        ],
-        [
-            // Add routes from userController and mount on user/
-            "mount" => "user",
-            "file" => __DIR__ . "/route2/userController.php",
-        ],
-        [
-            // REM
-            "mount" => "api/",
-            "file" => __DIR__ . "/route2/remserver.php",
+            "file" => __DIR__ . "/route/admin.php",
         ],
         [
             // For debugging and development details on Anax
