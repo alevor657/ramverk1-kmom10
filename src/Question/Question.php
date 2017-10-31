@@ -42,11 +42,13 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
         $this->text = $text;
         $this->user_id = $userId;
         $this->save();
+
+        $this->saveTags($tags, $this->id);
     }
 
 
 
-    public function saveTags($tags)
+    private function saveTags($tags, $questionId)
     {
         $tag = new Tag();
         $tag->setDb($this->di->get("db"));
@@ -66,5 +68,30 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $tag->tag = $tagstr;
             $tag->save();
         }
+
+        foreach ($tags as $tag) {
+            $tagObj = new Tag();
+            $tagObj->setDb($this->di->get("db"));
+
+            $tagObj->find('tag', $tag);
+            $question2Tag = new Question2Tag();
+            $question2Tag->setDb($this->di->get("db"));
+            $question2Tag->question_id = $questionId;
+            $question2Tag->tag_id = $tagObj->id;
+            $question2Tag->save();
+        }
+    }
+
+
+
+    public function populateQuestonsPageData()
+    {
+        // $data = $this->db
+        //         ->connect()
+        //         ->select()
+        //         ->from($this->tableName)
+        //         ->join('Tag');
+        //
+        // debug($data);
     }
 }

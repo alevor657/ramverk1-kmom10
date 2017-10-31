@@ -36,13 +36,20 @@ class QuestionController implements InjectionAwareInterface
 
     public function getQuestionPage()
     {
-        $tags = $this->tag->getAllTags();
+        $allTags = $this->tag->getAllTags();
+
+        $data = $this->question->populateQuestonsPageData();
+
+        $this->di->get("view")->add("question/questionsList", [
+            "posts" => $posts,
+            // "user" => $user
+        ]);
 
         if ($this->di->get("user")->isLoggedIn()) {
             $this->di->get("view")->add(
                 "question/createQuestionForm",
                 [
-                    "tags" => $tags
+                    "tags" => $allTags
                 ]
             );
         }
@@ -56,8 +63,6 @@ class QuestionController implements InjectionAwareInterface
     {
         $this->question->postQuestion();
 
-        $tags = $this->di->get("request")->getPost("tags");
-        $this->question->saveTags($tags);
         $this->di->get("response")->redirect("questions");
     }
 }
