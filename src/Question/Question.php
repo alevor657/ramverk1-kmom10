@@ -5,6 +5,7 @@ namespace Alvo\Question;
 use \Anax\DI\InjectionAwareInterface;
 use \Anax\Di\InjectionAwareTrait;
 use \Anax\Database\ActiveRecordModel;
+use \Alvo\User\User;
 
 /**
  *
@@ -48,6 +49,64 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
 
 
+    public function populateQuestonsPageData()
+    {
+        // select * from Question inner join Question2Tag on
+        // TODO: Populate needed data
+        // posts, who, tags
+
+        $data = [];
+
+        $allQuestions = $this->findAll();
+
+        foreach ($allQuestions as $question) {
+            $user = new User();
+            $user->setDb($this->di->get("db"));
+
+            $user->findById($question->user_id);
+            $question->userEmail = $user->email;
+
+            $question2Tag = new Question2Tag();
+            $question2Tag->setDb($this->di->get("db"));
+
+            $binding = $question2Tag->findAllWhere("question_id = ?", $question->id);
+            $tagIds = array_map(
+                function ($obj)
+                {
+                    return $obj->tag_id;
+                },
+                $binding
+            );
+
+            // TODO:
+            $tags = new Tag();
+            $tags->setDb($this->di->get("db"));
+
+            $tagsArray = $tags->findAllWhere("id in [${str_repeat('?,')]}", $tagIds);
+            debug($tagsArray);
+        }
+
+        // $data = $this->db
+        //         ->connect()
+        //         ->select()
+        //         ->from($this->tableName)
+        //         ->join('User', 'user_id = `User`.id')
+        //         ->join('Question2Tag', 'question_id = `Question`.id')
+        //         ->join('Tag', '`Question2Tag`.tag_id = `Tag`.id')
+        //         ->getSQL();
+                // ->execute($params)
+                // ->fetchAllClass(get_class($this));
+
+        // $questions = $this->findAll();
+
+
+
+
+        debug($data);
+    }
+
+
+
     private function saveTags($tags, $questionId)
     {
         $tag = new Tag();
@@ -80,18 +139,5 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $question2Tag->tag_id = $tagObj->id;
             $question2Tag->save();
         }
-    }
-
-
-
-    public function populateQuestonsPageData()
-    {
-        // $data = $this->db
-        //         ->connect()
-        //         ->select()
-        //         ->from($this->tableName)
-        //         ->join('Tag');
-        //
-        // debug($data);
     }
 }

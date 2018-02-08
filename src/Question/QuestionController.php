@@ -36,7 +36,6 @@ class QuestionController implements InjectionAwareInterface
 
     public function getQuestionPage()
     {
-        $allTags = $this->tag->getAllTags();
 
         $data = $this->question->populateQuestonsPageData();
 
@@ -46,12 +45,7 @@ class QuestionController implements InjectionAwareInterface
         ]);
 
         if ($this->di->get("user")->isLoggedIn()) {
-            $this->di->get("view")->add(
-                "question/createQuestionForm",
-                [
-                    "tags" => $allTags
-                ]
-            );
+            $this->di->get("view")->add("question/createQuestionForm");
         }
 
         $this->di->get("pageRender")->renderPage(["title" => "Questions"]);
