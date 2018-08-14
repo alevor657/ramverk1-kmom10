@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "f2a78c967d7b48dea3b0477d74c847c0",
@@ -57,16 +57,16 @@
         },
         {
             "name": "anax/configure",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/configure.git",
-                "reference": "81b7ebf49c13cd5d96453737acea8b3352e1a1ef"
+                "reference": "7247e1938bdf97b19090ac8024f2fd264ac8b6b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/configure/zipball/81b7ebf49c13cd5d96453737acea8b3352e1a1ef",
-                "reference": "81b7ebf49c13cd5d96453737acea8b3352e1a1ef",
+                "url": "https://api.github.com/repos/canax/configure/zipball/7247e1938bdf97b19090ac8024f2fd264ac8b6b4",
+                "reference": "7247e1938bdf97b19090ac8024f2fd264ac8b6b4",
                 "shasum": ""
             },
             "require": {
@@ -99,20 +99,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-09-26T17:53:23+00:00"
+            "time": "2018-03-16T14:47:26+00:00"
         },
         {
             "name": "anax/database",
-            "version": "v1.1.9",
+            "version": "v1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/database.git",
-                "reference": "5d27c49e531fbe44285b2a4df300598f78f0cac1"
+                "reference": "cae25768329ed2bbde2bea5a76262f0d6306dfa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/database/zipball/5d27c49e531fbe44285b2a4df300598f78f0cac1",
-                "reference": "5d27c49e531fbe44285b2a4df300598f78f0cac1",
+                "url": "https://api.github.com/repos/canax/database/zipball/cae25768329ed2bbde2bea5a76262f0d6306dfa4",
+                "reference": "cae25768329ed2bbde2bea5a76262f0d6306dfa4",
                 "shasum": ""
             },
             "require": {
@@ -151,20 +151,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-23T10:16:30+00:00"
+            "time": "2018-04-25T06:14:06+00:00"
         },
         {
             "name": "anax/di",
-            "version": "v1.0.9",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/di.git",
-                "reference": "f60264fdb3676bb507e1caedb96cdbfe60b0c6a6"
+                "reference": "2fd6ac6322bdbb8bdc62a5fbd9c69dffc94f1aaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/di/zipball/f60264fdb3676bb507e1caedb96cdbfe60b0c6a6",
-                "reference": "f60264fdb3676bb507e1caedb96cdbfe60b0c6a6",
+                "url": "https://api.github.com/repos/canax/di/zipball/2fd6ac6322bdbb8bdc62a5fbd9c69dffc94f1aaa",
+                "reference": "2fd6ac6322bdbb8bdc62a5fbd9c69dffc94f1aaa",
                 "shasum": ""
             },
             "require": {
@@ -198,20 +198,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-15T19:52:22+00:00"
+            "time": "2018-05-24T21:47:32+00:00"
         },
         {
             "name": "anax/page",
-            "version": "v1.0.2",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/page.git",
-                "reference": "cbb4bb2389e534ec1a8bbeb3bbbd606301801773"
+                "reference": "4f602e9fefdc4151d2957c5c29226775470685ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/page/zipball/cbb4bb2389e534ec1a8bbeb3bbbd606301801773",
-                "reference": "cbb4bb2389e534ec1a8bbeb3bbbd606301801773",
+                "url": "https://api.github.com/repos/canax/page/zipball/4f602e9fefdc4151d2957c5c29226775470685ae",
+                "reference": "4f602e9fefdc4151d2957c5c29226775470685ae",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "anax/request": "^1.0",
                 "anax/response": "^1.0",
                 "anax/view": "^1.0",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -248,27 +248,24 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-24T14:10:11+00:00"
+            "time": "2018-04-23T13:30:52+00:00"
         },
         {
             "name": "anax/request",
-            "version": "v1.0.6",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/request.git",
-                "reference": "4881aba8b7c4c9d25174e97c6e71f63427985cd7"
+                "reference": "4a5ddedbc1ca8fd735a404f99a0fc35ea156aa0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/request/zipball/4881aba8b7c4c9d25174e97c6e71f63427985cd7",
-                "reference": "4881aba8b7c4c9d25174e97c6e71f63427985cd7",
+                "url": "https://api.github.com/repos/canax/request/zipball/4a5ddedbc1ca8fd735a404f99a0fc35ea156aa0a",
+                "reference": "4a5ddedbc1ca8fd735a404f99a0fc35ea156aa0a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -297,7 +294,7 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-15T21:09:58+00:00"
+            "time": "2018-04-25T06:16:13+00:00"
         },
         {
             "name": "anax/response",
@@ -348,22 +345,22 @@
         },
         {
             "name": "anax/router",
-            "version": "v1.0.15",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/router.git",
-                "reference": "c7eb4e1b1ac8e88ea773c29e9ab863ebebee71dc"
+                "reference": "9291048e58baf2c4e6207eb33ddd5f1c306eb06d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/router/zipball/c7eb4e1b1ac8e88ea773c29e9ab863ebebee71dc",
-                "reference": "c7eb4e1b1ac8e88ea773c29e9ab863ebebee71dc",
+                "url": "https://api.github.com/repos/canax/router/zipball/9291048e58baf2c4e6207eb33ddd5f1c306eb06d",
+                "reference": "9291048e58baf2c4e6207eb33ddd5f1c306eb06d",
                 "shasum": ""
             },
             "require": {
                 "anax/common": "1.0.*",
                 "anax/di": "1.0.*",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "autoload": {
@@ -392,20 +389,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-09-28T19:44:36+00:00"
+            "time": "2018-03-16T14:43:54+00:00"
         },
         {
             "name": "anax/session",
-            "version": "v1.0.6",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/session.git",
-                "reference": "e589bc7a2cbaea7464503b65f764f9fd6408f8df"
+                "reference": "376bb3a02d3a93f5044646bacda9103976ddfd91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/session/zipball/e589bc7a2cbaea7464503b65f764f9fd6408f8df",
-                "reference": "e589bc7a2cbaea7464503b65f764f9fd6408f8df",
+                "url": "https://api.github.com/repos/canax/session/zipball/376bb3a02d3a93f5044646bacda9103976ddfd91",
+                "reference": "376bb3a02d3a93f5044646bacda9103976ddfd91",
                 "shasum": ""
             },
             "require": {
@@ -444,28 +441,33 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-15T20:42:17+00:00"
+            "time": "2018-04-25T06:15:14+00:00"
         },
         {
             "name": "anax/textfilter",
-            "version": "v1.0.2",
+            "version": "v1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/textfilter.git",
-                "reference": "0fe7b6839a86a2256d22b7f59d10ee92663f89f1"
+                "reference": "3f8cbc48f5694b8d49abdc50ded2581f9711a838"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/textfilter/zipball/0fe7b6839a86a2256d22b7f59d10ee92663f89f1",
-                "reference": "0fe7b6839a86a2256d22b7f59d10ee92663f89f1",
+                "url": "https://api.github.com/repos/canax/textfilter/zipball/3f8cbc48f5694b8d49abdc50ded2581f9711a838",
+                "reference": "3f8cbc48f5694b8d49abdc50ded2581f9711a838",
                 "shasum": ""
             },
             "require": {
-                "ezyang/htmlpurifier": "4.*",
-                "michelf/php-markdown": "1.6.*",
-                "michelf/php-smartypants": "1.6.*",
-                "php": ">=5.6",
+                "ezyang/htmlpurifier": "^4.0",
+                "michelf/php-markdown": "^1.6",
+                "michelf/php-smartypants": "^1.6",
+                "php": ">=7.0",
                 "scrivo/highlight.php": "^9.0"
+            },
+            "require-dev": {
+                "mustangostang/spyc": "^0.6.2",
+                "phpunit/phpunit": "^7",
+                "symfony/yaml": "^3.4"
             },
             "suggest": {
                 "ext-json": "*",
@@ -498,20 +500,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-02T10:25:31+00:00"
+            "time": "2018-08-14T12:40:47+00:00"
         },
         {
             "name": "anax/url",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/url.git",
-                "reference": "ef97056bca3c6fe8a558507a51bd13f512867bbe"
+                "reference": "c1d99076b59b13ccde498642b423ccf676518eed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/url/zipball/ef97056bca3c6fe8a558507a51bd13f512867bbe",
-                "reference": "ef97056bca3c6fe8a558507a51bd13f512867bbe",
+                "url": "https://api.github.com/repos/canax/url/zipball/c1d99076b59b13ccde498642b423ccf676518eed",
+                "reference": "c1d99076b59b13ccde498642b423ccf676518eed",
                 "shasum": ""
             },
             "require": {
@@ -545,20 +547,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-12T13:05:22+00:00"
+            "time": "2017-12-04T10:44:29+00:00"
         },
         {
             "name": "anax/view",
-            "version": "v1.0.23",
+            "version": "v1.0.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/view.git",
-                "reference": "70c289c86f00cb2625782f327c2eaf27edcc20ef"
+                "reference": "2a3466b2d151a4f0f78d1259e94e79853b831a15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/view/zipball/70c289c86f00cb2625782f327c2eaf27edcc20ef",
-                "reference": "70c289c86f00cb2625782f327c2eaf27edcc20ef",
+                "url": "https://api.github.com/repos/canax/view/zipball/2a3466b2d151a4f0f78d1259e94e79853b831a15",
+                "reference": "2a3466b2d151a4f0f78d1259e94e79853b831a15",
                 "shasum": ""
             },
             "require": {
@@ -594,20 +596,20 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-10-17T12:31:33+00:00"
+            "time": "2018-04-23T12:58:25+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.9.3",
+            "version": "v4.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69"
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/95e1bae3182efc0f3422896a3236e991049dac69",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
                 "shasum": ""
             },
             "require": {
@@ -641,34 +643,29 @@
             "keywords": [
                 "html"
             ],
-            "time": "2017-06-03T02:28:16+00:00"
+            "time": "2018-02-23T01:58:20+00:00"
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.6.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "156e56ee036505ec637d761ee62dc425d807183c"
+                "reference": "01ab082b355bf188d907b9929cd99b2923053495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/156e56ee036505ec637d761ee62dc425d807183c",
-                "reference": "156e56ee036505ec637d761ee62dc425d807183c",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/01ab082b355bf188d907b9929cd99b2923053495",
+                "reference": "01ab082b355bf188d907b9929cd99b2923053495",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-lib": "1.4.x-dev"
-                }
-            },
             "autoload": {
-                "psr-0": {
-                    "Michelf": ""
+                "psr-4": {
+                    "Michelf\\": "Michelf/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -692,31 +689,26 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2015-12-24T01:37:31+00:00"
+            "time": "2018-01-15T00:49:33+00:00"
         },
         {
             "name": "michelf/php-smartypants",
-            "version": "1.6.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-smartypants.git",
-                "reference": "674badae316a957173c67dd3184e21cb6807d7fb"
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/674badae316a957173c67dd3184e21cb6807d7fb",
-                "reference": "674badae316a957173c67dd3184e21cb6807d7fb",
+                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-lib": "1.6.x-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Michelf": ""
@@ -747,20 +739,20 @@
                 "typographer",
                 "typography"
             ],
-            "time": "2016-10-10T18:14:08+00:00"
+            "time": "2016-12-13T01:01:17+00:00"
         },
         {
             "name": "mos/cimage",
-            "version": "v0.7.19",
+            "version": "v0.7.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mosbth/cimage.git",
-                "reference": "f9604518e478a5097f29f991b61ba8ee36e7e5ba"
+                "reference": "cd142c58806c8edb6164a12a20e120eb7f436dfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mosbth/cimage/zipball/f9604518e478a5097f29f991b61ba8ee36e7e5ba",
-                "reference": "f9604518e478a5097f29f991b61ba8ee36e7e5ba",
+                "url": "https://api.github.com/repos/mosbth/cimage/zipball/cd142c58806c8edb6164a12a20e120eb7f436dfb",
+                "reference": "cd142c58806c8edb6164a12a20e120eb7f436dfb",
                 "shasum": ""
             },
             "require": {
@@ -807,21 +799,25 @@
                 "image",
                 "imageprocessing"
             ],
-            "time": "2017-03-30T22:47:55+00:00"
+            "time": "2017-11-06T09:24:47+00:00"
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.0.0",
+            "version": "v9.12.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "a905bf346a47f5fa40f33641b346c37f418d1242"
+                "reference": "d5b40c678b79ac9faffb32df601dc69e5d11da50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/a905bf346a47f5fa40f33641b346c37f418d1242",
-                "reference": "a905bf346a47f5fa40f33641b346c37f418d1242",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/d5b40c678b79ac9faffb32df601dc69e5d11da50",
+                "reference": "d5b40c678b79ac9faffb32df601dc69e5d11da50",
                 "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8",
+                "symfony/finder": "^2.8"
             },
             "type": "library",
             "autoload": {
@@ -833,7 +829,24 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "Server side syntax highlighter that supports over 90 languages. It's a PHP port of highlight.js",
+            "authors": [
+                {
+                    "name": "Geert Bergman",
+                    "homepage": "http://www.scrivo.org/",
+                    "role": "Project Author"
+                },
+                {
+                    "name": "Vladimir Jimenez",
+                    "homepage": "https://allejo.io",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Martin Folkers",
+                    "homepage": "https://twobrain.io",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Server side syntax highlighter that supports 176 languages. It's a PHP port of highlight.js",
             "keywords": [
                 "code",
                 "highlight",
@@ -841,27 +854,89 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2016-01-01T14:08:00+00:00"
+            "time": "2018-08-05T06:14:48+00:00"
         },
         {
-            "name": "symfony/yaml",
-            "version": "v3.3.10",
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "8c7bf1e7d5d6b05a690b715729cb4cd0c0a99c46"
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/8c7bf1e7d5d6b05a690b715729cb4cd0c0a99c46",
-                "reference": "8c7bf1e7d5d6b05a690b715729cb4cd0c0a99c46",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9|>=7.0.8"
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                },
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "time": "2018-08-06T14:22:27+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.4.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "810af2d35fc72b6cf5c01116806d2b65ccaaf2e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/810af2d35fc72b6cf5c01116806d2b65ccaaf2e2",
+                "reference": "810af2d35fc72b6cf5c01116806d2b65ccaaf2e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "conflict": {
+                "symfony/console": "<3.4"
             },
             "require-dev": {
-                "symfony/console": "~2.8|~3.0"
+                "symfony/console": "~3.4|~4.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -869,7 +944,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -896,7 +971,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-10-05T14:43:42+00:00"
+            "time": "2018-07-26T11:19:56+00:00"
         }
     ],
     "packages-dev": [],

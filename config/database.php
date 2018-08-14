@@ -14,7 +14,7 @@
 return [
     "dsn"              => "mysql:host=localhost;dbname=stack;charset=utf8",
     "username"         => "root",
-    "password"         => "",
+    "password"         => "raz666",
     "driver_options"   => [
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'",
         PDO::ATTR_ERRMODE,

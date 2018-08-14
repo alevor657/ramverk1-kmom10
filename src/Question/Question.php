@@ -59,6 +59,10 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
         $allQuestions = $this->findAll();
 
+        if (!$allQuestions) {
+            return [];
+        }
+
         foreach ($allQuestions as $question) {
             $user = new User();
             $user->setDb($this->di->get("db"));
@@ -82,8 +86,8 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $tags = new Tag();
             $tags->setDb($this->di->get("db"));
 
-            $tagsArray = $tags->findAllWhere("id in [${str_repeat('?,')]}", $tagIds);
-            debug($tagsArray);
+            // $tagsArray = $tags->findAllWhere("id in {[${str_repeat('?,')]}", $tagIds);
+            // debug($tagsArray);
         }
 
         // $data = $this->db
@@ -102,7 +106,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
 
 
-        debug($data);
+        // debug($data);
     }
 
 

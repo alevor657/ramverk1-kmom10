@@ -23,15 +23,19 @@ namespace Anax\View;
             <li class="nav-item">
                 <a class="nav-link" href="<?=url('about') ?>">About</a>
             </li>
-            <li class="nav-item dropdown">
+
+            <?php if(!$user) : ?>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Users
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="<?=url('user/register') ?>">Register</a>
-                      <a class="dropdown-item" href="<?=url('user/login') ?>">Login</a>
-                    </div>
-                  </li>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?=url('user/register') ?>">Register</a>
+                            <a class="dropdown-item" href="<?=url('user/login') ?>">Login</a>
+                        </div>
+                </li>
+            <?php endif; ?>
+
             <?php if ($user->admin ?? false) : ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?=url('admin') ?>">Admin</a>

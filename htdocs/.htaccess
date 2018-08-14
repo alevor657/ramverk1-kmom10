@@ -22,7 +22,7 @@ RewriteRule (.*) /~alvo16/dbwebb-kurser/ramverk1/me/anax/htdocs/index.php/$1 [NC
 
 # Rewrite 2 - For other requests
 RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
-RewriteRule ^image/(.*)$ cimage/img.php?src=$1 [QSA,NC,L] 
+RewriteRule ^image/(.*)$ cimage/img.php?src=$1 [QSA,NC,L]
 
 RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
 RewriteRule (.*) index.php/$1 [NC,L]
