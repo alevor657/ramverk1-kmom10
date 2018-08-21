@@ -40,7 +40,7 @@ class QuestionController implements InjectionAwareInterface
         $data = $this->question->populateQuestonsPageData();
 
         $this->di->get("view")->add("question/questionsList", [
-            "posts" => $posts,
+            "posts" => $data,
             // "user" => $user
         ]);
 
@@ -49,6 +49,20 @@ class QuestionController implements InjectionAwareInterface
         }
 
         $this->di->get("pageRender")->renderPage(["title" => "Questions"]);
+    }
+
+
+
+    public function getSpecificPost($id)
+    {
+        $post = $this->question->getQuestion($id);
+
+        $this->di->get("view")->add("question/questionPage", [
+            "post" => $post,
+            // "user" => $user
+        ]);
+
+        $this->di->get("pageRender")->renderPage(["title" => $post->heading]);
     }
 
 
