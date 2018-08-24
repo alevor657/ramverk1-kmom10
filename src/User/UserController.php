@@ -40,7 +40,7 @@ class UserController implements InjectionAwareInterface
         $title = "Profile";
 
         $user = $this->di->get("session")->get('user');
-        $data = $this->di->get('user')->getUser('email', $user->email);
+        $data = $this->di->get('user')->getUser('email', $user);
 
         $this->di->get('view')->add("user/profile", ["user" => $data]);
         $this->di->get('pageRender')->renderPage(["title" => $title]);
@@ -171,8 +171,6 @@ class UserController implements InjectionAwareInterface
     {
         $user = $this->di->get('session')
             ->has('userId');
-
-        echo 'check login';
 
         if (!$user) {
             $this->di->get('response')

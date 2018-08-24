@@ -126,6 +126,15 @@ return [
                 return $obj;
             }
         ],
+        "tags" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Alvo\Tags\TagsController();
+                $obj->setDI($this);
+                $obj->init();
+                return $obj;
+            }
+        ],
         "question" => [
             "shared" => true,
             "callback" => function () {

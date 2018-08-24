@@ -9,7 +9,7 @@ namespace Anax\View;
 <div class="container">
     <?php if (empty($posts)) : ?>
         <div class="row text-center">
-            <p>No posts yet</p>
+            <p>No posts found</p>
         </div>
     <?php endif; ?>
 
@@ -42,9 +42,11 @@ namespace Anax\View;
                 <div class="col-lg-3 col-xs-12">
                     <div class="row">
                         <div class="mx-auto">
-                            <?php if ($post->tags) : ?>
+                            <?php if (isset($post->tags) && $post->tags) : ?>
                                 <?php foreach ($post->tags as $tag): ?>
-                                    <span class="badge badge-pill badge-primary d-inline-block align-middle"><?=$tag->tag?></span>
+                                    <a href="<?=url("tags/{$tag->id}")?>">
+                                        <span class="badge badge-pill badge-primary d-inline-block align-middle"><?=$tag->tag?></span>
+                                    </a>
                                 <?php endforeach; ?>
                             <?php endif ?>
                         </div>

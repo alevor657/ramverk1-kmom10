@@ -4,7 +4,7 @@ namespace Anax\View;
 
 ?>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center login-form">
         <div class="col-lg-6">
             <form method="POST" action="<?=url("user/login")?>">
                 <div class="form-group">

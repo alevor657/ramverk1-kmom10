@@ -54,10 +54,6 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
     public function populateQuestonsPageData()
     {
-        // select * from Question inner join Question2Tag on
-        // TODO: Populate needed data
-        // posts, who, tags
-
         $data = [];
 
         $allQuestions = $this->findAll();
@@ -106,25 +102,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             // debug($tagsArray);
         }
 
-        // $data = $this->db
-        //         ->connect()
-        //         ->select()
-        //         ->from($this->tableName)
-        //         ->join('User', 'user_id = `User`.id')
-        //         ->join('Question2Tag', 'question_id = `Question`.id')
-        //         ->join('Tags', '`Question2Tag`.tag_id = `Tag`.id')
-        //         ->getSQL()
-        //         ->execute($params)
-        //         ->execute()
-        //         ->fetchAllClass(get_class($this));
-
         return $data;
-        // $questions = $this->findAll();
-
-
-
-
-        // debug($data);
     }
 
 
@@ -132,7 +110,6 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
     public function getQuestion($id)
     {
         $params = [$id];
-        // debug($params);
 
         $data = $this->db
                 ->connect()
@@ -140,7 +117,11 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                     User.email,
                     Question.heading,
                     Question.text,
-                    GROUP_CONCAT(Tags.tag) as tags
+                    GROUP_CONCAT(
+                        DISTINCT CONCAT(Tags.id, ':', Tags.tag)
+                        ORDER BY Tags.id
+                        SEPARATOR ';'
+                    ) as tags
                 ")
                 ->from($this->tableName)
                 ->join('User', 'Question.user_id = User.id')
@@ -151,7 +132,14 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                 ->execute($params)
                 ->fetch();
 
-        $data->tags = explode(',', $data->tags);
+        $data->tags = explode(';', $data->tags);
+
+        foreach($data->tags as &$tag) {
+            $tag = [
+                "id" => explode(':', $tag)[0],
+                "tag" => explode(':', $tag)[1]
+            ];
+        }
 
         return $data;
     }
