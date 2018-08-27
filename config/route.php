@@ -28,6 +28,10 @@ return [
             "file" => __DIR__ . "/route/user.php",
         ],
         [
+            "mount" => "reply",
+            "file" => __DIR__ . "/route/reply.php",
+        ],
+        [
             "mount" => "admin",
             "file" => __DIR__ . "/route/admin.php",
         ],

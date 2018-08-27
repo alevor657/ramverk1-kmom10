@@ -1,7 +1,7 @@
 <?php
 
 namespace Anax\View;
-// debug($posts);
+
 ?>
 
 

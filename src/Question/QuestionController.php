@@ -4,6 +4,7 @@ namespace Alvo\Question;
 
 use \Anax\DI\InjectionAwareInterface;
 use \Anax\Di\InjectionAwareTrait;
+use \Alvo\Tags\Tag;
 
 /**
  *
@@ -59,8 +60,23 @@ class QuestionController implements InjectionAwareInterface
 
         $this->di->get("view")->add("question/questionPage", [
             "post" => $post,
-            // "user" => $user
         ]);
+
+        $replies = $this->di->get('reply')->getTree($id);
+
+        $this->di->get("view")->add("reply/replies", [
+            "replies" => $replies,
+            "questionId" => $id
+        ]);
+
+
+        $user = $this->di->get('user')->isLoggedIn();
+
+        if ($user) {
+            $this->di->get("view")->add("reply/replyForm", [
+                "questionId" => $post->id
+            ]);
+        }
 
         $this->di->get("pageRender")->renderPage(["title" => $post->heading]);
     }

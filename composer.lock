@@ -445,16 +445,16 @@
         },
         {
             "name": "anax/textfilter",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/textfilter.git",
-                "reference": "3f8cbc48f5694b8d49abdc50ded2581f9711a838"
+                "reference": "92a609ec7f8caf5f04fbd9a503536239b2cdc4d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/textfilter/zipball/3f8cbc48f5694b8d49abdc50ded2581f9711a838",
-                "reference": "3f8cbc48f5694b8d49abdc50ded2581f9711a838",
+                "url": "https://api.github.com/repos/canax/textfilter/zipball/92a609ec7f8caf5f04fbd9a503536239b2cdc4d7",
+                "reference": "92a609ec7f8caf5f04fbd9a503536239b2cdc4d7",
                 "shasum": ""
             },
             "require": {
@@ -491,16 +491,16 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Anax TextFilter module.",
+            "description": "Anax TextFilter module, frontmatter, shortcodes, markdown.",
             "homepage": "https://dbwebb.se/anax",
             "keywords": [
-                "boilerplate",
+                "anax",
                 "education",
-                "framework",
-                "micro",
-                "mvc"
+                "frontmatter",
+                "shortcodes",
+                "textprocessing"
             ],
-            "time": "2018-08-14T12:40:47+00:00"
+            "time": "2018-08-15T14:37:18+00:00"
         },
         {
             "name": "anax/url",
@@ -803,16 +803,16 @@
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.12.0.4",
+            "version": "v9.12.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "d5b40c678b79ac9faffb32df601dc69e5d11da50"
+                "reference": "0db45267df6b3bbae224ff86445d6407629e8b96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/d5b40c678b79ac9faffb32df601dc69e5d11da50",
-                "reference": "d5b40c678b79ac9faffb32df601dc69e5d11da50",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/0db45267df6b3bbae224ff86445d6407629e8b96",
+                "reference": "0db45267df6b3bbae224ff86445d6407629e8b96",
                 "shasum": ""
             },
             "require-dev": {
@@ -854,7 +854,7 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2018-08-05T06:14:48+00:00"
+            "time": "2018-08-24T15:45:27+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

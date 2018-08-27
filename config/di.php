@@ -144,5 +144,14 @@ return [
                 return $obj;
             }
         ],
+        "reply" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Alvo\Reply\ReplyController();
+                $obj->setDI($this);
+                $obj->init();
+                return $obj;
+            }
+        ],
     ],
 ];

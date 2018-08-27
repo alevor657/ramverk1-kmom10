@@ -6,6 +6,8 @@ use \Anax\DI\InjectionAwareInterface;
 use \Anax\Di\InjectionAwareTrait;
 use \Anax\Database\ActiveRecordModel;
 use \Alvo\User\User;
+use \Alvo\Tags\Question2Tag;
+use \Alvo\Tags\Tag;
 
 /**
  *
@@ -30,6 +32,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
     public $heading;
     public $text;
     public $user_id;
+    public $created;
 
 
 
@@ -117,6 +120,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                     User.email,
                     Question.heading,
                     Question.text,
+                    Question.id as id,
                     GROUP_CONCAT(
                         DISTINCT CONCAT(Tags.id, ':', Tags.tag)
                         ORDER BY Tags.id
@@ -128,7 +132,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                 ->join('Question2Tag', 'Question.id = Question2Tag.question_id')
                 ->join('Tags', 'Question2Tag.tag_id = Tags.id')
                 ->where('Question.id = ?')
-                ->groupBy('email, heading, text')
+                ->groupBy('email, heading, text, id')
                 ->execute($params)
                 ->fetch();
 
@@ -140,6 +144,8 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                 "tag" => explode(':', $tag)[1]
             ];
         }
+
+        // debug($data);
 
         return $data;
     }
@@ -153,6 +159,10 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
         $tagObjects = $tag->findAll();
         $dbtags = [];
+
+        $tags = array_map('strtolower', $tags);
+        $tags = array_map('trim', $tags);
+        $tags = array_unique($tags);
 
         foreach ($tagObjects as $tag) {
             $dbtags[] = $tag->tag;
