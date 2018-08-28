@@ -65,28 +65,29 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ->execute($params)
             ->fetchAll();
 
-        return $this->parseReplies($replies);
+        debug($this->parseReplies($replies));
+        // return $this->parseReplies($replies);
     }
 
-    private function parseReplies($replies)
+    private function parseReplies(array &$replies, $id = null)
     {
-        foreach($replies as $key => $reply) {
-            if ($reply->replyTo != null) {
-                $foundReferences = array_filter($replies, function($item) use ($reply) {
-                    return $item->replyId == $reply->replyTo;
-                });
+        $res = [];
 
-                // debug($foundReferences);
+        foreach ($replies as $reply) {
+            $res[$reply->replyId] = $reply;
+            $res[$reply->replyId]->children = [];
+        }
 
-                array_map(function($item) use ($reply) {
-                    return $item->comments[] = $reply;
-                }, $foundReferences);
+        $root = null;
 
-                unset($replies[$key]);
+        foreach ($res as $id => $row) {
+            $res[$row->replyTo]->children[$id] =& $res[$id];
+
+            if (!$row->replyTo) {
+                $root = $id;
             }
         }
 
-        // debug($replies);
-        return $replies;
+        return array($root => $res[$root]);
     }
 }

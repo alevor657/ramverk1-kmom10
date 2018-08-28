@@ -2,7 +2,7 @@
 
 namespace Anax\View;
 
-// debug($replies);
+debug($replies);
 function createComment($replies, $questionId, $indent = 0, $temp = '') {
     $margin = $indent * 10 . 'px';
     $url = url("reply");
