@@ -2,13 +2,14 @@
 
 namespace Anax\View;
 
-debug($replies);
+// debug($replies);
 function createComment($replies, $questionId, $indent = 0, $temp = '') {
     $margin = $indent * 10 . 'px';
     $url = url("reply");
 
     foreach ($replies as $reply) {
-        // debug($reply);
+    // debug_noexit($reply);
+
     $temp .= <<<EOT
 <div class="row">
     <div class="col-12">
@@ -35,7 +36,7 @@ function createComment($replies, $questionId, $indent = 0, $temp = '') {
 EOT;
 
     if ($reply->comments ?? false) {
-        return createComment($reply->comments, $questionId, $indent + 1, $temp);
+        $temp = createComment($reply->comments, $questionId, $indent + 1, $temp);
     }
 
     }
