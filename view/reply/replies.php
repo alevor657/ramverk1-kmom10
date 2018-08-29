@@ -2,21 +2,22 @@
 
 namespace Anax\View;
 
-// debug($replies);
 function createComment($replies, $questionId, $indent = 0, $temp = '') {
     $margin = $indent * 10 . 'px';
     $url = url("reply");
 
     foreach ($replies as $reply) {
         $temp .= <<<EOT
-    <div class="row">
+    <div class="row reply">
         <div class="col-12">
-            <div class="card" style="margin-left: $margin;">
+            <div class="card mb-3" id="$reply->replyId" style="margin-left: $margin;">
+                <div class="card-header text-left">
+                    <img class="rounded" src="$reply->gravatar" alt="Avatar">
+                    <h5 class="mb-0 ml-3 text-center align-middle">$reply->email</h5>
+                </div>
                 <div class="card-body">
-                    <!--<h5 class="card-title">$reply->email</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">$reply->created</h6> -->
                     <p class="card-text">$reply->content</p>
-                    <a href="#" class="card-link reply-link">Reply...</a>
+                    <a href="#" class="card-link reply-link m-0 p-0" style="display: none;">Reply...</a>
 
                     <form method="POST" action="$url" enctype="application/x-www-form-urlencoded" class="reply-form" style="display: none;">
                         <input type="text" hidden name="replyId" value="$reply->replyId">
@@ -27,6 +28,9 @@ function createComment($replies, $questionId, $indent = 0, $temp = '') {
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     </form>
 
+                </div>
+                <div class="card-footer text-muted">
+                    <h6 class="card-subtitle m-0 text-muted text-center">$reply->created</h6>
                 </div>
             </div>
         </div>

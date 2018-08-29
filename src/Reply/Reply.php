@@ -7,7 +7,7 @@ use \Anax\DI\InjectionAwareInterface;
 use \Anax\Di\InjectionAwareTrait;
 // use \Alvo\Tags\Question2Tag;
 // use \Alvo\Tags\Tag;
-// use \Alvo\User\User;
+use \Alvo\User\User;
 
 /**
  *
@@ -64,6 +64,9 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ->where('Reply.question_id = ?')
             ->execute($params)
             ->fetchAll();
+
+        $user = new User();
+        $replies = $user->getGravatars($replies);
 
         $parents = array_filter($replies, function($item) {
             return $item->replyTo == null;

@@ -30,7 +30,7 @@ namespace Anax\View;
         $('#toggle_form').on('click', function() {
             $('.add-question-form').toggle(400);
 
-            $(this).toggle(400);
+            // $(this).toggle(400);
         });
     });
 </script>

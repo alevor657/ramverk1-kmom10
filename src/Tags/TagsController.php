@@ -35,7 +35,6 @@ class TagsController implements InjectionAwareInterface
      */
     public function getIndex()
     {
-        $this->di->get('user')->checkLogin();
         $tagsPopularityMap = $this->tag->getTagsPopularity();
 
         $title = "Tags";

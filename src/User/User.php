@@ -179,15 +179,43 @@ use \Anax\DI\InjectionAwareTrait;
 
 
 
-    public function delete($id = null)
+    public function getRecentQuestions($userId)
     {
-        $id = $id ?: $this->id;
+        return $this->db
+            ->connect()
+            ->select()
+            ->from('Question')
+            ->where('user_id = ?')
+            ->limit(5)
+            ->orderBy('Question.created DESC')
+            ->execute([$userId])
+            ->fetchAll();
+    }
 
-        $comment = new User();
-        $comment->setDb($this->db);
-        $comment->find("id", $id);
-        $comment->deleted = date("Y-m-d H:i:s");
-        $comment->save();
+
+
+    public function getRecentAnswers($userId)
+    {
+        return $this->db
+            ->connect()
+            ->select()
+            ->from('Reply')
+            ->where('user_id = ?')
+            ->limit(5)
+            ->orderBy('Reply.created DESC')
+            ->execute([$userId])
+            ->fetchAll();
+    }
+
+
+
+    public function getGravatars(array $users)
+    {
+        foreach ($users as $user) {
+            $user->gravatar = $this->getGravatar($user->email);
+        }
+
+        return $users;
     }
 
 
