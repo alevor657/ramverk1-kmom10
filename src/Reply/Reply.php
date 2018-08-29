@@ -65,29 +65,60 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ->execute($params)
             ->fetchAll();
 
-        debug($this->parseReplies($replies));
-        // return $this->parseReplies($replies);
+        $parents = array_filter($replies, function($item) {
+            return $item->replyTo == null;
+        });
+
+        $res = [];
+
+        foreach($parents as $parent) {
+            $parent->comments = $this->buildTree($replies, $parent);
+        }
+
+        // debug($parents);
+
+
+        return $parents;
     }
 
-    private function parseReplies(array &$replies, $id = null)
+    private function buildTree(array $flat, $parent = null)
     {
         $res = [];
 
-        foreach ($replies as $reply) {
-            $res[$reply->replyId] = $reply;
-            $res[$reply->replyId]->children = [];
-        }
+        foreach ($flat as $item) {
+            if ($item->replyTo == $parent->replyId) {
+                $children = $this->buildTree($flat, $item);
 
-        $root = null;
+                if (!empty($children)) {
+                    $item->comments = $children;
+                }
 
-        foreach ($res as $id => $row) {
-            $res[$row->replyTo]->children[$id] =& $res[$id];
-
-            if (!$row->replyTo) {
-                $root = $id;
+                $res[] = $item;
             }
         }
 
-        return array($root => $res[$root]);
+        return $res;
     }
+
+    // private function parseReplies(array &$replies, $id = null)
+    // {
+    //     $res = [];
+
+    //     foreach ($replies as $reply) {
+    //         $res[$reply->replyId] = $reply;
+    //         $res[$reply->replyId]->comments = [];
+    //     }
+
+    //     $root = null;
+
+    //     foreach ($res as $id => $row) {
+    //         $res[$row->replyTo]->comments[$id] =& $res[$id];
+
+    //         if (!$row->replyTo) {
+    //             $root = $id;
+    //         }
+    //     }
+
+    //     return array($root => $res[$root]);
+    // }
 }
