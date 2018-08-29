@@ -9,6 +9,12 @@ return [
             "callable" => ["user", "getIndex"],
         ],
         [
+            "info" => "Overview over another user",
+            "requestMethod" => "get",
+            "path" => "{id:digit}",
+            "callable" => ["user", "getOverview"],
+        ],
+        [
             "info" => "Get login page",
             "requestMethod" => "get",
             "path" => "login",

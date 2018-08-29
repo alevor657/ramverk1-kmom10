@@ -7,13 +7,17 @@ function createComment($replies, $questionId, $indent = 0, $temp = '') {
     $url = url("reply");
 
     foreach ($replies as $reply) {
+        $userProfileUrl = url("user/$reply->userId");
+
         $temp .= <<<EOT
     <div class="row reply">
         <div class="col-12">
             <div class="card mb-3" id="$reply->replyId" style="margin-left: $margin;">
                 <div class="card-header text-left">
                     <img class="rounded" src="$reply->gravatar" alt="Avatar">
-                    <h5 class="mb-0 ml-3 text-center align-middle">$reply->email</h5>
+                    <a href="$userProfileUrl">
+                        <h5 class="mb-0 ml-3 text-center align-middle">$reply->email</h5>
+                    </a>
                 </div>
                 <div class="card-body">
                     <p class="card-text">$reply->content</p>

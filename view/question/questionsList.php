@@ -32,9 +32,9 @@ namespace Anax\View;
                         </div>
                     </div>
                     <?php if (strlen($post->text) < 140) : ?>
-                        <p><?=$post->text?></p>
+                        <p class="longtext"><?=$post->text?></p>
                     <?php else : ?>
-                        <p><?=substr($post->text, 0, 140)?></p>
+                        <p class="longtext"><?=substr($post->text, 0, 140)?></p>
                         <br>
                         <a href="<?=url("questions/$post->id")?>">Read more...</a>
                     <?php endif ?>

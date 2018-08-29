@@ -78,9 +78,6 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             $parent->comments = $this->buildTree($replies, $parent);
         }
 
-        // debug($parents);
-
-
         return $parents;
     }
 

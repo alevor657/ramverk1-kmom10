@@ -56,6 +56,45 @@ class UserController implements InjectionAwareInterface
 
 
 
+     /**
+     * Description.
+     *
+     * @param datatype $variable Description
+     *
+     * @throws Exception
+     *
+     * @return void
+     */
+    public function getOverview($id)
+    {
+        $currentUserId = $this->di->get("session")->get('userId');
+
+        if ($id == $currentUserId) {
+            $this->di->get("response")->redirect('user/profile');
+        }
+
+        $this->checkLogin();
+
+        $title = "Profile overview";
+
+        $user = new User();
+        $user->setDb($this->di->get('db'));
+        $user->find('id', $id);
+
+        $questions = $this->user->getRecentQuestions($user->id);
+        $answers = $this->user->getRecentAnswers($user->id);
+
+        // debug($data->email);
+        $this->di->get('view')->add("user/profileOverview", [
+                "user" => $user,
+                "userQuestions" => $questions,
+                "userAnswers" => $answers
+            ]);
+        $this->di->get('pageRender')->renderPage(["title" => $title]);
+    }
+
+
+
     /**
      * Description.
      *

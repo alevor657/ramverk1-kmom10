@@ -24,7 +24,7 @@ namespace Anax\View;
     </div>
     <div class="row">
         <div class="col-12 text-left">
-            <p><?=$post->text?></p>
+            <p class="longtext"><?=$post->text?></p>
         </div>
     </div>
 
