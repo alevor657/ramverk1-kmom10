@@ -15,6 +15,9 @@ function debug($var)
     exit;
 }
 
+/**
+ * @SuppressWarnings("PHPMD")
+ */
 function debug_noexit($var)
 {
     echo "<pre>";

@@ -11,7 +11,7 @@ use \Alvo\User\User;
 /**
  * A database driven model.
  */
- class Tag extends ActiveRecordModel implements InjectionAwareInterface
+class Tag extends ActiveRecordModel implements InjectionAwareInterface
 {
     use InjectionAwareTrait;
 
@@ -82,8 +82,6 @@ use \Alvo\User\User;
             $user->findById($question->user_id);
             $question->avatarUrl = $user->getGravatar();
         }
-
-        // debug($data);
 
         return [
             "tagText" => $tagText,

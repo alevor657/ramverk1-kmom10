@@ -1,6 +1,6 @@
 <?php
-
 namespace Anax\View;
+
 ?>
 
 
@@ -13,7 +13,7 @@ namespace Anax\View;
     <?php endif; ?>
 
     <?php if (!empty($posts)) : ?>
-        <?php foreach ($posts as $post): ?>
+        <?php foreach ($posts as $post) : ?>
             <div class="row">
                 <div class="col-lg-3 col-xs-12">
                     <!-- <img src="" alt="image" class="user-pic"> -->
@@ -44,7 +44,7 @@ namespace Anax\View;
                     <div class="row">
                         <div class="mx-auto">
                             <?php if (isset($post->tags) && $post->tags) : ?>
-                                <?php foreach ($post->tags as $tag): ?>
+                                <?php foreach ($post->tags as $tag) : ?>
                                     <a href="<?=url("tags/{$tag->id}")?>">
                                         <span class="badge badge-pill badge-primary d-inline-block align-middle"><?=$tag->tag?></span>
                                     </a>

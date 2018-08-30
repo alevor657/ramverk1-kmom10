@@ -51,14 +51,9 @@ class TagsController implements InjectionAwareInterface
 
         $title = "Tag | {$data["tagText"]}";
 
-        // debug($data);
-
         $this->di->get('view')->add("tags/tagTitle", ["tagText" => $data["tagText"]]);
         $this->di->get('view')->add("question/questionsList", ["posts" => $data["questions"]]);
         $this->di->get('pageRender')->renderPage(["title" => $title]);
 
     }
-
-
-
 }

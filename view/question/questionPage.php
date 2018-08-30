@@ -1,8 +1,6 @@
 <?php
-
 namespace Anax\View;
 
-// debug($post);
 ?>
 
 <div class="container">
@@ -12,8 +10,8 @@ namespace Anax\View;
                 <?=$post->heading?>
                 <br>
                 <!-- TODO: --->
-                <?php if(isset($post->tags) && $post->tags) : ?>
-                    <?php foreach($post->tags as $tag) :?>
+                <?php if (isset($post->tags) && $post->tags) : ?>
+                    <?php foreach ($post->tags as $tag) :?>
                         <a href="<?= url("tags/{$tag["id"]}")?>">
                             <small class="text-muted"><?=$tag["tag"]?></small>
                         </a>

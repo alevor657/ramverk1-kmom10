@@ -1,5 +1,4 @@
 <?php
-
 namespace Anax\View;
 
 ?>
@@ -14,7 +13,7 @@ namespace Anax\View;
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input required type="password" name="password" class="form-control <?= isset($err) ? 'is-invalid':''?>" id="password" placeholder="Password">
-                    <?php if (isset($err)): ?>
+                    <?php if (isset($err)) : ?>
                         <div class="invalid-feedback">
                             <?=$err?>
                         </div>

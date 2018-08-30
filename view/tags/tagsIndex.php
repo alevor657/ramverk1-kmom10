@@ -1,5 +1,4 @@
 <?php
-
 namespace Anax\View;
 
 ?>
@@ -19,7 +18,7 @@ namespace Anax\View;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($tags as $tag) : ?>
+                <?php foreach ($tags as $tag) : ?>
                     <tr>
                     <td><a href="<?= url("tags/$tag->id") ?>"><?=$tag->tag?></a></td>
                     <td><?=$tag->count?></td>

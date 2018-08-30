@@ -1,8 +1,6 @@
 <?php
-
 namespace Anax\View;
 
-// debug($tags);
 ?>
 
 <br>

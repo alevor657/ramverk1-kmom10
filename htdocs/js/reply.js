@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var $ = window.jQuery;
+    var $ = window.$;
 
     $('.reply-link').on('click', function() {
         // console.log(e);

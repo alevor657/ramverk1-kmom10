@@ -10,7 +10,7 @@ use \Anax\Di\InjectionAwareTrait;
 use \Alvo\User\User;
 
 /**
- *
+ * @SuppressWarnings("camelCase")
  */
 class Reply extends ActiveRecordModel implements InjectionAwareInterface
 {
@@ -72,13 +72,11 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             $reply->content = $this->di->get("textfilter")->doFIlter($reply->content, 'markdown');
         }
 
-        $parents = array_filter($replies, function($item) {
+        $parents = array_filter($replies, function ($item) {
             return $item->replyTo == null;
         });
 
-        $res = [];
-
-        foreach($parents as $parent) {
+        foreach ($parents as $parent) {
             $parent->comments = $this->buildTree($replies, $parent);
         }
 

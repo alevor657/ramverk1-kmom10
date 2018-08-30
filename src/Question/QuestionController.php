@@ -70,7 +70,6 @@ class QuestionController implements InjectionAwareInterface
 
         $replies = $this->di->get('reply')->getTree($id);
         $user = $this->di->get('user')->isLoggedIn();
-        // debug($user);
 
         $this->di->get("view")->add("reply/replies", [
             "loggedIn" => $user,
@@ -96,6 +95,3 @@ class QuestionController implements InjectionAwareInterface
         $this->di->get("response")->redirect("questions");
     }
 }
-
-// TODO: IS USER LOGGED IN IN replies.php ...
-

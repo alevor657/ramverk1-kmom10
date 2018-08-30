@@ -8,8 +8,10 @@ use \Anax\DI\InjectionAwareTrait;
 
 /**
  * A database driven model.
+ *
+ * @SuppressWarnings("camelCase")
  */
- class Question2Tag extends ActiveRecordModel implements InjectionAwareInterface
+class Question2Tag extends ActiveRecordModel implements InjectionAwareInterface
 {
     use InjectionAwareTrait;
 
@@ -26,5 +28,4 @@ use \Anax\DI\InjectionAwareTrait;
      */
     public $question_id;
     public $tag_id;
-
 }

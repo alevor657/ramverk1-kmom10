@@ -9,7 +9,7 @@ use \Anax\DI\InjectionAwareTrait;
 /**
  * A database driven model.
  */
- class User extends ActiveRecordModel implements InjectionAwareInterface
+class User extends ActiveRecordModel implements InjectionAwareInterface
 {
     use InjectionAwareTrait;
     use UserUtils;
@@ -21,6 +21,8 @@ use \Anax\DI\InjectionAwareTrait;
      */
     protected $tableName = "User";
 
+
+
     /**
      * Columns in the table.
      *
@@ -31,6 +33,12 @@ use \Anax\DI\InjectionAwareTrait;
     public $password;
     public $reputation;
 
+
+
+    /**
+     * @SuppressWarnings("unused")
+     * phpmd freaks out when it sees expract, therefore I am supressing warnings
+     */
     public function logUserIn($updatingLogin = null)
     {
         if (!$updatingLogin) {
@@ -67,6 +75,10 @@ use \Anax\DI\InjectionAwareTrait;
 
 
 
+    /**
+     * @SuppressWarnings("unused")
+     * phpmd freaks out when it sees expract, therefore I am supressing warnings
+     */
     public function register()
     {
         $data = $this->di->get("request")->getPost();
@@ -87,7 +99,7 @@ use \Anax\DI\InjectionAwareTrait;
         $this->reputation = 0;
         $this->setPassword($password);
 
-        $t = $this->save();
+        $this->save();
 
         return true;
     }

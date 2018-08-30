@@ -10,7 +10,7 @@ use \Alvo\Tags\Question2Tag;
 use \Alvo\Tags\Tag;
 
 /**
- *
+ * @SuppressWarnings("camelCase")
  */
 class Question extends ActiveRecordModel implements InjectionAwareInterface
 {
@@ -39,11 +39,10 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
     public function postQuestion()
     {
         $data = $this->di->get("request")->getPost();
-        extract($data);
         $userId = $this->di->get("session")->get("userId");
 
-        $this->heading = $heading;
-        $this->text = $text;
+        $this->heading = $data->heading;
+        $this->text = $data->text;
         $this->user_id = $userId;
         $this->save();
 
@@ -84,11 +83,8 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                 continue;
             }
 
-            // debug($binding);
-
             $tagIds = array_map(
-                function ($obj)
-                {
+                function ($obj) {
                     return $obj->tag_id;
                 },
                 $binding
@@ -102,7 +98,6 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $question->tags = $tagsArray;
 
             $data[] = $question;
-            // debug($tagsArray);
         }
 
         return $data;
@@ -138,14 +133,12 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
         $data->tags = explode(';', $data->tags);
 
-        foreach($data->tags as &$tag) {
+        foreach ($data->tags as &$tag) {
             $tag = [
                 "id" => explode(':', $tag)[0],
                 "tag" => explode(':', $tag)[1]
             ];
         }
-
-        // debug($data);
 
         return $data;
     }

@@ -1,11 +1,12 @@
 <?php
 namespace Anax\View;
+
 ?>
     <div class="row">
         <div class="col-lg-4 col-sm-12">
             <?php if ($userQuestions ?? false) : ?>
                 <h1 class="text-center">Recent questions</h1>
-                <?php foreach($userQuestions as $question) : ?>
+                <?php foreach ($userQuestions as $question) : ?>
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center"><?=$question->heading?></h5>
@@ -39,9 +40,9 @@ namespace Anax\View;
             </div>
         </div>
         <div class="col-lg-4 col-sm-12">
-            <?php if ($userAnswers ?? false): ?>
+            <?php if ($userAnswers ?? false) : ?>
                 <h1 class="text-center">Recent replies</h1>
-                <?php foreach ($userAnswers as $answer): ?>
+                <?php foreach ($userAnswers as $answer) : ?>
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text"><?=substr($answer->content, 0, 35)?>

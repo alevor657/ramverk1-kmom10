@@ -1,14 +1,12 @@
 <?php
 namespace Anax\View;
 
-// debug($data);
-
 ?>
 <div class="row">
     <div class="col-lg-4 col-sm-12">
-        <?php if ($data["questions"] ?? false): ?>
+        <?php if ($data["questions"] ?? false) : ?>
             <h1 class="text-center">Recent questions</h1>
-            <?php foreach ($data["questions"] as $question): ?>
+            <?php foreach ($data["questions"] as $question) : ?>
                 <div class="card">
                     <div class="card-body">
                         <a href="<?=url("questions/$question->id")?>">
@@ -22,9 +20,9 @@ namespace Anax\View;
     </div>
     <div class="col-lg-4 col-sm-12">
 
-        <?php if ($data["users"] ?? false): ?>
+        <?php if ($data["users"] ?? false) : ?>
             <h1 class="text-center">Top 5 users</h1>
-            <?php foreach ($data["users"] as $user): ?>
+            <?php foreach ($data["users"] as $user) : ?>
                 <div class="card mt-3">
                     <div class="card-header text-center">
                         <img class="rounded" src="<?=$user->gravatar?>" alt="Avatar">
@@ -41,9 +39,9 @@ namespace Anax\View;
 
     </div>
     <div class="col-lg-4 col-sm-12">
-        <?php if ($data["tags"] ?? false): ?>
+        <?php if ($data["tags"] ?? false) : ?>
             <h1 class="text-center">Top 5 tags</h1>
-            <?php foreach ($data["tags"] as $tag): ?>
+            <?php foreach ($data["tags"] as $tag) : ?>
                 <div class="card">
                     <div class="card-body">
                         <p class="card-text text-center">

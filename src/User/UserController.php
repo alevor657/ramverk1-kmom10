@@ -87,7 +87,6 @@ class UserController implements InjectionAwareInterface
         $questions = $this->user->getRecentQuestions($user->id);
         $answers = $this->user->getRecentAnswers($user->id);
 
-        // debug($data->email);
         $this->di->get('view')->add("user/profileOverview", [
                 "user" => $user,
                 "userQuestions" => $questions,
@@ -168,28 +167,6 @@ class UserController implements InjectionAwareInterface
 
 
 
-    /**
-     * Description.
-     *
-     * @param datatype $variable Description
-     *
-     * @throws Exception
-     *
-     * @return void
-     */
-    public function getPostCreateUser()
-    {
-        $title      = "A create user page";
-
-        $this->di->get("view")
-            ->add("default2/article", $data);
-
-        $this->di->get("pageRender")
-            ->renderPage(["title" => $title]);
-    }
-
-
-
     public function getUser()
     {
         return $this->user->getUser();
@@ -250,7 +227,7 @@ class UserController implements InjectionAwareInterface
 
     public function updateUser()
     {
-        $t = $this->user->updateUser();
+        $this->user->updateUser();
         $this->di->get("response")
             ->redirect("user/profile");
     }

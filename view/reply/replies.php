@@ -2,9 +2,8 @@
 
 namespace Anax\View;
 
-// debug($this->di->get('textfilter'));
-
-function createComment($replies, $questionId, $loggedIn, $indent = 0, $temp = '')  {
+function createComment($replies, $questionId, $loggedIn, $indent = 0, $temp = '')
+{
     $margin = $indent * 10 . 'px';
     $url = url("reply");
     $replyLink = $loggedIn ? '<a href="#" class="card-link reply-link m-0 p-0" style="display: none;">Reply...</a>' : '';
