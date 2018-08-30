@@ -32,7 +32,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
     public $heading;
     public $text;
     public $user_id;
-    public $created;
+    // public $created;
 
 
 
@@ -146,6 +146,55 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
         }
 
         // debug($data);
+
+        return $data;
+    }
+
+
+
+    public function populateFirstPage()
+    {
+        $questions = $this->db
+            ->connect()
+            ->select()
+            ->from('Question')
+            ->limit(5)
+            ->orderBy('Question.created DESC')
+            ->execute()
+            ->fetchAll();
+
+        foreach ($questions as $question) {
+            $question->text = $this->di->get("textfilter")->doFilter($question->text, "markdown");
+        }
+
+        $popularTags = $this->di->get('db')
+            ->connect()
+            ->select("Tags.tag, count(Question2Tag.tag_id) as count, Tags.id")
+            ->from("Tags")
+            ->join('Question2Tag', 'Tags.id = Question2Tag.tag_id')
+            ->groupBy('tag')
+            ->limit(5)
+            ->orderBy('count DESC')
+            ->execute()
+            ->fetchAll();
+
+        $activeUsers = $this->di->get('db')
+            ->connect()
+            ->select("email, id, reputation")
+            ->from("User")
+            ->limit(5)
+            ->orderBy('reputation DESC')
+            ->execute()
+            ->fetchAll();
+
+        $user = new User();
+        $activeUsers = $user->getGravatars($activeUsers);
+
+        $data = [
+            "questions" => $questions,
+            "tags" => $popularTags,
+            "users" => $activeUsers
+        ];
 
         return $data;
     }

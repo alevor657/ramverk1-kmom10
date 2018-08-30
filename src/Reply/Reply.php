@@ -68,6 +68,10 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
         $user = new User();
         $replies = $user->getGravatars($replies);
 
+        foreach ($replies as $reply) {
+            $reply->content = $this->di->get("textfilter")->doFIlter($reply->content, 'markdown');
+        }
+
         $parents = array_filter($replies, function($item) {
             return $item->replyTo == null;
         });

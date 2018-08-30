@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    $('.reply-link').on('click', function(e) {
+    var $ = window.jQuery;
+
+    $('.reply-link').on('click', function() {
         // console.log(e);
         // console.log(this);
 
@@ -11,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
     });
 
-    $('.card').hover(function(e) {
+    $('.card').hover(function() {
         $(this).find('a.card-link').slideDown(200, 'linear');
-    }, function (e) {
+    }, function () {
         $(this).find('a.card-link').slideUp(200, 'linear');
     });
 });

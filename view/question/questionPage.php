@@ -24,7 +24,7 @@ namespace Anax\View;
     </div>
     <div class="row">
         <div class="col-12 text-left">
-            <p class="longtext"><?=$post->text?></p>
+            <p class="longtext"><?=$this->di->get("textfilter")->doFIlter($post->text, 'markdown')?></p>
         </div>
     </div>
 

@@ -1,12 +1,11 @@
 <?php
 
 namespace Anax\View;
-
 ?>
 
 
 
-<div class="container">
+<div class="container question-list">
     <?php if (empty($posts)) : ?>
         <div class="row text-center">
             <p>No posts found</p>
@@ -20,7 +19,9 @@ namespace Anax\View;
                     <!-- <img src="" alt="image" class="user-pic"> -->
                     <figure class="figure">
                         <img src="<?=$post->avatarUrl?>" class="figure-img img-fluid rounded" alt="Avatar">
-                        <figcaption class="figure-caption"><?=$post->userEmail?></figcaption>
+                        <a href="<?=url("user/$post->user_id")?>">
+                            <figcaption class="figure-caption"><?=$post->userEmail?></figcaption>
+                        </a>
                     </figure>
                 </div>
                 <div class="col-lg-6 col-xs-12">
@@ -32,9 +33,9 @@ namespace Anax\View;
                         </div>
                     </div>
                     <?php if (strlen($post->text) < 140) : ?>
-                        <p class="longtext"><?=$post->text?></p>
+                        <?=$post->text?>
                     <?php else : ?>
-                        <p class="longtext"><?=substr($post->text, 0, 140)?></p>
+                        <?=substr($post->text, 0, 140)?>
                         <br>
                         <a href="<?=url("questions/$post->id")?>">Read more...</a>
                     <?php endif ?>
@@ -56,4 +57,6 @@ namespace Anax\View;
             <hr>
         <?php endforeach; ?>
     <?php endif; ?>
+
+<!-- ?? -->
 </div>

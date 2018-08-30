@@ -2,10 +2,12 @@
 
 namespace Anax\View;
 
-function createComment($replies, $questionId, $indent = 0, $temp = '') {
+// debug($this->di->get('textfilter'));
+
+function createComment($replies, $questionId, $loggedIn, $indent = 0, $temp = '')  {
     $margin = $indent * 10 . 'px';
     $url = url("reply");
-
+    $replyLink = $loggedIn ? '<a href="#" class="card-link reply-link m-0 p-0" style="display: none;">Reply...</a>' : '';
     foreach ($replies as $reply) {
         $userProfileUrl = url("user/$reply->userId");
 
@@ -21,7 +23,8 @@ function createComment($replies, $questionId, $indent = 0, $temp = '') {
                 </div>
                 <div class="card-body">
                     <p class="card-text">$reply->content</p>
-                    <a href="#" class="card-link reply-link m-0 p-0" style="display: none;">Reply...</a>
+
+                    $replyLink
 
                     <form method="POST" action="$url" enctype="application/x-www-form-urlencoded" class="reply-form" style="display: none;">
                         <input type="text" hidden name="replyId" value="$reply->replyId">
@@ -42,7 +45,7 @@ function createComment($replies, $questionId, $indent = 0, $temp = '') {
 EOT;
 
         if ($reply->comments ?? false) {
-            $temp = createComment($reply->comments, $questionId, $indent + 1, $temp);
+            $temp = createComment($reply->comments, $questionId, $loggedIn, $indent + 1, $temp);
         }
     }
 
@@ -51,7 +54,7 @@ EOT;
 ?>
 
 <div class="container">
-    <?= createComment($replies, $questionId); ?>
+    <?= createComment($replies, $questionId, $loggedIn); ?>
 </div>
 
 <script src="<?=asset("js/reply")?>"></script>

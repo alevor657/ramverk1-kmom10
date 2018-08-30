@@ -39,9 +39,12 @@ class UserController implements InjectionAwareInterface
 
         $title = "Profile";
 
-        $user = $this->di->get("session")->get('user');
+        $userEmail = $this->di->get("session")->get('user');
         $userId = $this->di->get("session")->get('userId');
-        $data = $this->di->get('user')->getUser('email', $user);
+
+        $user = new User();
+        $user->setDb($this->di->get('db'));
+        $data = $user->getUser('email', $userEmail);
 
         $questions = $this->user->getRecentQuestions($userId);
         $answers = $this->user->getRecentAnswers($userId);

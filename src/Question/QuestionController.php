@@ -29,8 +29,10 @@ class QuestionController implements InjectionAwareInterface
 
     public function getFirstPage()
     {
-        $this->di->get("view")->add("index");
-        $this->di->get("pageRender")->renderPage(["title" => "test"]);
+        $data = $this->question->populateFirstPage();
+
+        $this->di->get("view")->add("index", ["data" => $data]);
+        $this->di->get("pageRender")->renderPage(["title" => "Welcome!"]);
     }
 
 
@@ -39,6 +41,10 @@ class QuestionController implements InjectionAwareInterface
     {
 
         $data = $this->question->populateQuestonsPageData();
+
+        foreach ($data as $post) {
+            $post->text = $this->di->get('textfilter')->doFilter($post->text, 'markdown');
+        }
 
         $this->di->get("view")->add("question/questionsList", [
             "posts" => $data,
@@ -63,14 +69,14 @@ class QuestionController implements InjectionAwareInterface
         ]);
 
         $replies = $this->di->get('reply')->getTree($id);
+        $user = $this->di->get('user')->isLoggedIn();
+        // debug($user);
 
         $this->di->get("view")->add("reply/replies", [
+            "loggedIn" => $user,
             "replies" => $replies,
             "questionId" => $id
         ]);
-
-
-        $user = $this->di->get('user')->isLoggedIn();
 
         if ($user) {
             $this->di->get("view")->add("reply/replyForm", [

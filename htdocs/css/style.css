@@ -1,9 +1,10 @@
+.question-list .row{max-height:110px;overflow:hidden}
 .longtext{word-break:break-all}
 
 .footer{height:200px;color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;margin-top:2em}
 .navbar-wrap{margin-bottom:90px}.main-wrap{min-height:80vh}.main-wrap .text{padding:1em 20%}.main-wrap .text img{display:block;margin:auto;max-width:100%}.main-wrap .figure{display:block;margin:auto;text-align:center}.main-wrap .centered{text-align:center}.main-wrap .centered img{width:40%}.text h1,.text h2,.text h3,.text h4,.text h5,.text h6{text-align:center}
 .center{text-align:center}.center-block{display:block;margin:auto}
-html{text-align:justify}.main-wrap h6{margin:2em auto}
+html{text-align:justify}
 .form input{padding:8px;border-radius:4px}
 
 .about img{text-align:center}

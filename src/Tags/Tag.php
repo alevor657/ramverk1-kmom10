@@ -48,14 +48,11 @@ use \Alvo\User\User;
 
     public function getTagDetails($tagId)
     {
-        // TODO:
         $tagText = $this->find('id', $tagId)->tag;
 
         if (!$tagText) {
             return false;
         }
-
-        // debug($tagText);
 
         $question = new Question();
         $question->setDb($this->di->get('db'));
@@ -78,6 +75,7 @@ use \Alvo\User\User;
          * Add avatar for each user
          */
         foreach ($data as $question) {
+            $question->text = $this->di->get('textfilter')->doFilter($question->text, 'markdown');
             $user = new User();
             $user->setDb($this->di->get("db"));
 
