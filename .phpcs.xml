@@ -13,6 +13,8 @@
     <exclude-pattern>imgd.php</exclude-pattern>
     <exclude-pattern>vendor</exclude-pattern>
 
+    <file>./src</file>
+
     <arg name="encoding" value="utf-8"/>
     <arg name="warning-severity" value="0"/>
 
