@@ -25,6 +25,13 @@ namespace Anax\View;
             <p class="longtext"><?=$this->di->get("textfilter")->doFIlter($post->text, 'markdown')?></p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 text-left">
+            <a href="<?=url("user/$post->userId")?>">
+                <p>By <?=$post->email?></p>
+            </a>
+        </div>
+    </div>
 
     <hr>
 

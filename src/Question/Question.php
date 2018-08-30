@@ -41,13 +41,13 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
         $data = $this->di->get("request")->getPost();
         $userId = $this->di->get("session")->get("userId");
 
-        $this->heading = $data->heading;
-        $this->text = $data->text;
+        $this->heading = $data["heading"];
+        $this->text = $data["text"];
         $this->user_id = $userId;
         $this->save();
 
-        if (!empty($tags)) {
-            $tags = explode(", ", trim($tags));
+        if (!empty($data["tags"])) {
+            $tags = explode(", ", trim($data["tags"]));
             $this->saveTags($tags, $this->id);
         }
     }
@@ -113,6 +113,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
                 ->connect()
                 ->select("
                     User.email,
+                    User.id as userId,
                     Question.heading,
                     Question.text,
                     Question.id as id,
@@ -194,7 +195,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
 
 
 
-    private function saveTags($tags, $questionId)
+    private function saveTags(array $tags, $questionId)
     {
         $tag = new Tag();
         $tag->setDb($this->di->get("db"));
