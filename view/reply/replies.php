@@ -56,4 +56,4 @@ EOT;
     <?= createComment($replies, $questionId, $loggedIn); ?>
 </div>
 
-<script src="<?=asset("js/reply")?>"></script>
+<script src="<?=asset("js/reply.js")?>"></script>
