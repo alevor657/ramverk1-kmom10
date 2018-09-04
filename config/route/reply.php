@@ -21,16 +21,28 @@ return [
             "callable" => ["reply", "postReply"],
         ],
         [
-            "info" => "Post a reply",
+            "info" => "Make answer accepted",
             "requestMethod" => "get",
             "path" => "accept/{id:digit}",
             "callable" => ["reply", "acceptAnswer"],
         ],
         [
-            "info" => "Post a reply",
+            "info" => "Make unaccepted",
             "requestMethod" => "get",
             "path" => "unaccept/{id:digit}",
             "callable" => ["reply", "unacceptAnswer"],
+        ],
+        [
+            "info" => "Upvote",
+            "requestMethod" => "get",
+            "path" => "upvote/{replyId:digit}",
+            "callable" => ["impression", "upvote"],
+        ],
+        [
+            "info" => "Downvote",
+            "requestMethod" => "get",
+            "path" => "downvote/{replyId:digit}",
+            "callable" => ["impression", "downvote"],
         ],
     ],
 ];

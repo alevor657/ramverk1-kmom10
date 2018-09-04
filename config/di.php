@@ -153,5 +153,14 @@ return [
                 return $obj;
             }
         ],
+        "impression" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Alvo\Impression\ImpressionController();
+                $obj->setDI($this);
+                $obj->init();
+                return $obj;
+            }
+        ],
     ],
 ];

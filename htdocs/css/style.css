@@ -6,9 +6,9 @@
 .center{text-align:center}.center-block{display:block;margin:auto}
 html{text-align:justify}
 .form input{padding:8px;border-radius:4px}
-
 .about img{text-align:center}
 .comments .card{position:relative}.comments .card .icons-wrap{position:absolute;right:1em}.comments .card .icons-wrap a{color:#000}
+
 .reply .card .card-header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.reply .card .card-header h5,.reply .card .card-header img{display:inline-block}.reply .icon-container{width:40px;height:40px;display:inline-block}.reply .icon-container span{font-size:40px}.reply .reactions-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.reply .reactions-container .vote{font-size:40px}.reply .reactions-container .rating-count{height:25px;line-height:27px}
 .all-users{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.all-users .card{-webkit-box-flex:0;-ms-flex:0 0 20%;flex:0 0 20%;margin:1em}
 .profile{width:20rem}input{text-align:center}
