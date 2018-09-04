@@ -32,6 +32,7 @@ class PageRender implements PageRenderInterface, InjectionAwareInterface
             "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
             "lib/css/font-awesome.min.css",
             "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css",
+            "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
             "css/style.css",
         ];
 

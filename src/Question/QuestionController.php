@@ -5,6 +5,7 @@ namespace Alvo\Question;
 use \Anax\DI\InjectionAwareInterface;
 use \Anax\Di\InjectionAwareTrait;
 use \Alvo\Tags\Tag;
+use \Alvo\User\User;
 
 /**
  *
@@ -69,15 +70,17 @@ class QuestionController implements InjectionAwareInterface
         ]);
 
         $replies = $this->di->get('reply')->getTree($id);
-        $user = $this->di->get('user')->isLoggedIn();
+        $isLoggedIn = $this->di->get('user')->isLoggedIn();
+        $isUserQuestionOwner = $this->di->get('session')->get('userId') == $post->userId;
 
         $this->di->get("view")->add("reply/replies", [
-            "loggedIn" => $user,
+            "isUserQuestionOwner" => $isUserQuestionOwner,
+            "loggedIn" => $isLoggedIn,
             "replies" => $replies,
             "questionId" => $id
         ]);
 
-        if ($user) {
+        if ($isLoggedIn) {
             $this->di->get("view")->add("reply/replyForm", [
                 "questionId" => $post->id
             ]);

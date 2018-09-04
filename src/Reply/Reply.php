@@ -8,6 +8,7 @@ use \Anax\Di\InjectionAwareTrait;
 // use \Alvo\Tags\Question2Tag;
 // use \Alvo\Tags\Tag;
 use \Alvo\User\User;
+use \Alvo\Question\Question;
 
 /**
  * @SuppressWarnings("camelCase")
@@ -31,7 +32,10 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
     public $user_id;
     public $question_id;
     public $reply_to_id;
+    public $accepted;
     // public $created;
+
+
 
     public function postReply()
     {
@@ -45,6 +49,8 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
         $this->save();
     }
 
+
+
     public function getTree($questionId)
     {
         $params = [$questionId];
@@ -54,6 +60,7 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ->select("
                 Reply.content,
                 Reply.created,
+                Reply.accepted,
                 User.email,
                 User.id as userId,
                 Reply.id as replyId,
@@ -62,6 +69,7 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ->from($this->tableName)
             ->join('User', 'User.id = Reply.user_id')
             ->where('Reply.question_id = ?')
+            ->orderBy('Reply.accepted DESC')
             ->execute($params)
             ->fetchAll();
 
@@ -83,6 +91,8 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
         return $parents;
     }
 
+
+
     private function buildTree(array $flat, $parent = null)
     {
         $res = [];
@@ -102,25 +112,63 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
         return $res;
     }
 
-    // private function parseReplies(array &$replies, $id = null)
-    // {
-    //     $res = [];
 
-    //     foreach ($replies as $reply) {
-    //         $res[$reply->replyId] = $reply;
-    //         $res[$reply->replyId]->comments = [];
-    //     }
 
-    //     $root = null;
+    public function acceptAnswer($id)
+    {
+        // Unmark all previously accepted answers
+        $questionId = $this->di->get("request")->getGet("questionId");
 
-    //     foreach ($res as $id => $row) {
-    //         $res[$row->replyTo]->comments[$id] =& $res[$id];
+        if (!$this->checkIfUserOwnsQuestion($questionId)) {
+            return;
+        }
 
-    //         if (!$row->replyTo) {
-    //             $root = $id;
-    //         }
-    //     }
+        $acceptedAnswers = $this->findAllWhere('question_id = ?', $questionId);
 
-    //     return array($root => $res[$root]);
-    // }
+        foreach ($acceptedAnswers as $answer) {
+            $this->find('id', $answer->id);
+            $this->accepted = 0;
+            $this->save();
+        }
+
+        $this->find('id', $id);
+
+        // Toggle value
+        $this->accepted = 1;
+        $this->save();
+    }
+
+
+
+    public function unacceptAnswer($id)
+    {
+        $questionId = $this->di->get("request")->getGet("questionId");
+
+        if (!$this->checkIfUserOwnsQuestion($questionId)) {
+            return;
+        }
+
+        $this->find('id', $id);
+
+        // Toggle value
+        $this->accepted = 0;
+        $this->save();
+    }
+
+
+
+    private function checkIfUserOwnsQuestion($questionId)
+    {
+        $currentUserId = $this->di->get('session')->get('userId');
+
+        $question = $this->di->get('db')
+            ->connect()
+            ->select('user_id as userId')
+            ->from('Question')
+            ->where('id = ?')
+            ->execute([$questionId])
+            ->fetch();
+
+        return $question->userId == $currentUserId;
+    }
 }

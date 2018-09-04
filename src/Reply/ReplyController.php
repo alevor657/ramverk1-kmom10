@@ -12,12 +12,16 @@ class ReplyController implements InjectionAwareInterface
 {
     use InjectionAwareTrait;
 
+
+
     public function init()
     {
         $this->reply = new Reply();
         $this->reply->setDI($this->di);
         $this->reply->setDb($this->di->get("db"));
     }
+
+
 
     public function postReply()
     {
@@ -28,8 +32,30 @@ class ReplyController implements InjectionAwareInterface
         $this->di->get("response")->redirect("questions/$id");
     }
 
+
+
     public function getTree($id)
     {
         return $this->reply->getTree($id);
+    }
+
+
+
+    public function acceptAnswer($id)
+    {
+        $this->reply->acceptAnswer($id);
+
+        $questionId = $this->di->get("request")->getGet("questionId");
+        $this->di->get("response")->redirect("questions/$questionId");
+    }
+
+
+
+    public function unacceptAnswer($id)
+    {
+        $this->reply->unacceptAnswer($id);
+
+        $questionId = $this->di->get("request")->getGet("questionId");
+        $this->di->get("response")->redirect("questions/$questionId");
     }
 }

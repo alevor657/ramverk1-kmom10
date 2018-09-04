@@ -2,20 +2,50 @@
 
 namespace Anax\View;
 
-function createComment($replies, $questionId, $loggedIn, $indent = 0, $temp = '')
+function createComment($replies, $questionId, $loggedIn, $isUserQuestionOwner, $indent = 0, $temp = '')
 {
     $margin = $indent * 10 . 'px';
     $url = url("reply");
     $replyLink = $loggedIn ? '<a href="#" class="card-link reply-link m-0 p-0" style="display: none;">Reply...</a>' : '';
+
     foreach ($replies as $reply) {
         $userProfileUrl = url("user/$reply->userId");
+        $acceptLink = url("reply/accept/$reply->replyId" . "?questionId=$questionId");
+        $unacceptLink = url("reply/unaccept/$reply->replyId" . "?questionId=$questionId");
+
+        $acceptedIcon = <<<EOT
+                    <div class="icon-container mx-3">
+                        <a href="$unacceptLink">
+                            <span class="fas fa-check text-success"></span>
+                        </a>
+                    </div>
+EOT;
+        $acceptIcon =  <<<EOT
+                    <div class="icon-container mx-3">
+                        <a href="$acceptLink">
+                            <span class="far fa-check-circle text-primary"></span>
+                        </a>
+                    </div>
+EOT;
+
+        if ($indent == 0) {
+            $accepted = $reply->accepted ? $acceptedIcon : $acceptIcon;
+        } else {
+            $accepted = "";
+        }
 
         $temp .= <<<EOT
     <div class="row reply">
         <div class="col-12">
             <div class="card mb-3" id="$reply->replyId" style="margin-left: $margin;">
                 <div class="card-header text-left">
-                    <img class="rounded" src="$reply->gravatar" alt="Avatar">
+                    <div class="reactions-container mx-3">
+                        <span class="fas fa-angle-up text-success vote"></span>
+                        <div class="rating-count">150</div>
+                        <span class="fas fa-angle-down text-danger vote"></span>
+                    </div>
+                    $accepted
+                    <img class="rounded mx-3" src="$reply->gravatar" alt="Avatar">
                     <a href="$userProfileUrl">
                         <h5 class="mb-0 ml-3 text-center align-middle">$reply->email</h5>
                     </a>
@@ -44,7 +74,7 @@ function createComment($replies, $questionId, $loggedIn, $indent = 0, $temp = ''
 EOT;
 
         if ($reply->comments ?? false) {
-            $temp = createComment($reply->comments, $questionId, $loggedIn, $indent + 1, $temp);
+            $temp = createComment($reply->comments, $questionId, $loggedIn, $isUserQuestionOwner, $indent + 1, $temp);
         }
     }
 
@@ -53,7 +83,7 @@ EOT;
 ?>
 
 <div class="container">
-    <?= createComment($replies, $questionId, $loggedIn); ?>
+    <?= createComment($replies, $questionId, $loggedIn, $isUserQuestionOwner); ?>
 </div>
 
 <script src="<?=asset("js/reply.js")?>"></script>

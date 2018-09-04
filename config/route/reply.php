@@ -20,5 +20,17 @@ return [
             "path" => null,
             "callable" => ["reply", "postReply"],
         ],
+        [
+            "info" => "Post a reply",
+            "requestMethod" => "get",
+            "path" => "accept/{id:digit}",
+            "callable" => ["reply", "acceptAnswer"],
+        ],
+        [
+            "info" => "Post a reply",
+            "requestMethod" => "get",
+            "path" => "unaccept/{id:digit}",
+            "callable" => ["reply", "unacceptAnswer"],
+        ],
     ],
 ];
