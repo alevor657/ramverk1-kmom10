@@ -13,6 +13,9 @@ function createComment($replies, $questionId, $loggedIn, $isUserQuestionOwner, $
         $acceptLink = url("reply/accept/$reply->replyId" . "?questionId=$questionId");
         $unacceptLink = url("reply/unaccept/$reply->replyId" . "?questionId=$questionId");
 
+        $upvoteLink = url("reply/upvote/$reply->replyId?questionId=$questionId");
+        $downvoteLink = url("reply/downvote/$reply->replyId?questionId=$questionId");
+
         $acceptedIcon = <<<EOT
                     <div class="icon-container mx-3">
                         <a href="$unacceptLink">
@@ -40,9 +43,13 @@ EOT;
             <div class="card mb-3" id="$reply->replyId" style="margin-left: $margin;">
                 <div class="card-header text-left">
                     <div class="reactions-container mx-3">
+                    <a href="$upvoteLink">
                         <span class="fas fa-angle-up text-success vote"></span>
-                        <div class="rating-count">150</div>
+                    </a>
+                    <div class="rating-count">$reply->replyRating</div>
+                    <a href="$downvoteLink">
                         <span class="fas fa-angle-down text-danger vote"></span>
+                    </a>
                     </div>
                     $accepted
                     <img class="rounded mx-3" src="$reply->gravatar" alt="Avatar">

@@ -28,20 +28,20 @@ class ImpressionController implements InjectionAwareInterface
         $userId = $this->di->get('session')->get('userId');
         $this->impression->upvote($userId, $replyId);
 
-        $questionId = $this->di->get('request')->getGet('qestionId');
-        $this->di->get('response')->redirect('questions/$questionId');
+        $questionId = $this->di->get('request')->getGet('questionId');
+        $this->di->get('response')->redirect("questions/$questionId");
     }
 
 
 
-    public function downvote()
+    public function downvote($replyId)
     {
         $this->di->get('user')->checkLogin();
 
         $userId = $this->di->get('session')->get('userId');
         $this->impression->downvote($userId, $replyId);
 
-        $questionId = $this->di->get('request')->getGet('qestionId');
-        $this->di->get('response')->redirect('questions/$questionId');
+        $questionId = $this->di->get('request')->getGet('questionId');
+        $this->di->get('response')->redirect("questions/$questionId");
     }
 }

@@ -64,12 +64,14 @@ class QuestionController implements InjectionAwareInterface
     public function getSpecificPost($id)
     {
         $post = $this->question->getQuestion($id);
+        $sortingMethod = $this->di->get('request')->getGet('sort', 'accepted');
 
         $this->di->get("view")->add("question/questionPage", [
             "post" => $post,
+            "sortingMethod" => $sortingMethod
         ]);
 
-        $replies = $this->di->get('reply')->getTree($id);
+        $replies = $this->di->get('reply')->getTree($id, $sortingMethod);
         $isLoggedIn = $this->di->get('user')->isLoggedIn();
         $isUserQuestionOwner = $this->di->get('session')->get('userId') == $post->userId;
 

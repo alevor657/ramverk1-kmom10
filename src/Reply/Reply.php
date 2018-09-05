@@ -51,13 +51,15 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
 
 
 
-    public function getTree($questionId)
+    public function getTree($questionId, $sortingMethod)
     {
         $params = [$questionId];
+        $orderBy = $this->sortingMethodToOrderBy($sortingMethod);
 
         $replies = $this->db
             ->connect()
             ->select("
+                COALESCE(SUM(Impression.value), 0) as replyRating,
                 Reply.content,
                 Reply.created,
                 Reply.accepted,
@@ -68,10 +70,22 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ")
             ->from($this->tableName)
             ->join('User', 'User.id = Reply.user_id')
+            ->leftJoin('Impression', 'Impression.reply_id = Reply.id')
             ->where('Reply.question_id = ?')
-            ->orderBy('Reply.accepted DESC')
+            ->orderBy($orderBy)
+            ->groupBy('
+                Reply.content,
+                Reply.created,
+                Reply.accepted,
+                User.email,
+                userId,
+                replyId,
+                replyTo
+            ')
             ->execute($params)
             ->fetchAll();
+
+        // debug($replies);
 
         $user = new User();
         $replies = $user->getGravatars($replies);
@@ -89,27 +103,6 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
         }
 
         return $parents;
-    }
-
-
-
-    private function buildTree(array $flat, $parent = null)
-    {
-        $res = [];
-
-        foreach ($flat as $item) {
-            if ($item->replyTo == $parent->replyId) {
-                $children = $this->buildTree($flat, $item);
-
-                if (!empty($children)) {
-                    $item->comments = $children;
-                }
-
-                $res[] = $item;
-            }
-        }
-
-        return $res;
     }
 
 
@@ -170,5 +163,47 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
             ->fetch();
 
         return $question->userId == $currentUserId;
+    }
+
+
+
+    private function buildTree(array $flat, $parent = null)
+    {
+        $res = [];
+
+        foreach ($flat as $item) {
+            if ($item->replyTo == $parent->replyId) {
+                $children = $this->buildTree($flat, $item);
+
+                if (!empty($children)) {
+                    $item->comments = $children;
+                }
+
+                $res[] = $item;
+            }
+        }
+
+        return $res;
+    }
+
+
+
+    private function sortingMethodToOrderBy($method)
+    {
+        $sql = 'Reply.accepted DESC';
+
+        switch ($method) {
+            case 'accepted':
+                $sql = 'Reply.accepted DESC';
+                break;
+            case 'date':
+                $sql = 'Reply.created DESC';
+                break;
+            case 'rating':
+                $sql = 'replyRating DESC';
+                break;
+        }
+
+        return $sql;
     }
 }

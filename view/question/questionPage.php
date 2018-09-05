@@ -33,6 +33,19 @@ namespace Anax\View;
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-12">
+            <form class="form-inline text-right" method="GET">
+                <label class="my-1 mr-2" for="sort">Sort by: </label>
+                <select class="custom-select my-1 mr-sm-2" id="sort" onchange="this.form.submit()" name="sort">
+                    <option value="accepted" <?=$sortingMethod == "accepted" ? "selected" : ""?>>Аccepted</option>
+                    <option value="rating" <?=$sortingMethod == "rating" ? "selected" : ""?>>Rating</option>
+                    <option value="date" <?=$sortingMethod == "date" ? "selected" : ""?>>Date</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
     <hr>
 
 </div>

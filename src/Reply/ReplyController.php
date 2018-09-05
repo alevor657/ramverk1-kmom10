@@ -34,9 +34,9 @@ class ReplyController implements InjectionAwareInterface
 
 
 
-    public function getTree($id)
+    public function getTree($id, $sortingMethod)
     {
-        return $this->reply->getTree($id);
+        return $this->reply->getTree($id, $sortingMethod);
     }
 
 
