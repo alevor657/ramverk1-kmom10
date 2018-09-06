@@ -31,9 +31,10 @@
 <div class="main-wrap container <?= $class ?? '' ?>">
         <?php $this->renderRegion("main") ?>
 </div>
-<?php // HACK: Extra closing tag bellow ?>
+
+<!-- <?php // HACK: Extra closing tag bellow ?>
 </div>
-<?php endif; ?>
+<?php endif; ?> -->
 
 <?php if ($this->regionHasContent("footer")) : ?>
 <div class="footer-wrap">

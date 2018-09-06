@@ -14,9 +14,16 @@ namespace Anax\View;
 
     <?php if (!empty($posts)) : ?>
         <?php foreach ($posts as $post) : ?>
-            <div class="row">
+        <?php
+            $lines = explode("\n", $post->text);
+
+            if (count($lines) > 2) {
+                $post->text = implode("\n", array_slice($lines, 0, 2));
+                // debug($post->text);
+            }
+        ?>
+            <div class="row question-row">
                 <div class="col-lg-3 col-xs-12">
-                    <!-- <img src="" alt="image" class="user-pic"> -->
                     <figure class="figure">
                         <img src="<?=$post->avatarUrl?>" class="figure-img img-fluid rounded" alt="Avatar">
                         <a href="<?=url("user/$post->user_id")?>">
@@ -32,13 +39,17 @@ namespace Anax\View;
                             </a>
                         </div>
                     </div>
-                    <?php if (strlen($post->text) < 140) : ?>
-                        <?=$post->text?>
-                    <?php else : ?>
-                        <?=substr($post->text, 0, 140)?>
-                        <br>
-                        <a href="<?=url("questions/$post->id")?>">Read more...</a>
-                    <?php endif ?>
+                    <div class="row">
+                        <div class="col-auto">
+                            <?php if (strlen($post->text) < 140): ?>
+                                <?=$post->text?>
+                            <?php else: ?>
+                                <?=substr($post->text, 0, 140)?>
+                                <br>
+                                <a href="<?=url("questions/$post->id")?>">Read more...</a>
+                            <?php endif?>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-xs-12">
                     <div class="row">
