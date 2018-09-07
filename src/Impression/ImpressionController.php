@@ -20,6 +20,7 @@ class ImpressionController implements InjectionAwareInterface
     }
 
 
+
     // TODO:
     public function upvote($replyId)
     {
@@ -28,7 +29,16 @@ class ImpressionController implements InjectionAwareInterface
         $userId = $this->di->get('session')->get('userId');
         $this->impression->upvote($userId, $replyId);
 
-        // $userId = $this->di->get('session')->get('userId');
+        // get author of comment
+        $userId = $this->di->get('db')
+            ->connect()
+            ->select('User.id as userId')
+            ->from('Reply')
+            ->join('User', 'Reply.user_id = User.id')
+            ->execute()
+            ->fetch()
+            ->userId;
+
         $this->di->get('user')->incrementRating($userId);
 
         $questionId = $this->di->get('request')->getGet('questionId');
@@ -44,6 +54,18 @@ class ImpressionController implements InjectionAwareInterface
 
         $userId = $this->di->get('session')->get('userId');
         $this->impression->downvote($userId, $replyId);
+
+        // get author of comment
+        $userId = $this->di->get('db')
+            ->connect()
+            ->select('User.id as userId')
+            ->from('Reply')
+            ->join('User', 'Reply.user_id = User.id')
+            ->execute()
+            ->fetch()
+            ->userId;
+
+        $this->di->get('user')->incrementRating($userId, -1);
 
         $questionId = $this->di->get('request')->getGet('questionId');
         $this->di->get('response')->redirect("questions/$questionId");
