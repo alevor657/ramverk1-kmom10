@@ -221,6 +221,20 @@ class User extends ActiveRecordModel implements InjectionAwareInterface
 
 
 
+    public function getImpressionCount($userId)
+    {
+        return $this->db
+            ->connect()
+            ->select('COUNT(*) as impressionsCount')
+            ->from('Impression')
+            ->where('user_id = ?')
+            ->execute([$userId])
+            ->fetch()
+            ->impressionsCount;
+    }
+
+
+
     public function getGravatars(array $users)
     {
         foreach ($users as $user) {

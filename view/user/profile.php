@@ -34,6 +34,7 @@ namespace Anax\View;
                         </div>
                         <p>Reputation: <?=$user->reputation?></p>
                         <small>You earn reputation by being active at this website</small>
+                        <p>Impressions: <?=$impressions?></p>
                         <button type="submit" class="btn btn-warning btn-block">Update</button>
                     </form>
                 </div>

@@ -30,6 +30,7 @@ namespace Anax\View;
                         </div>
                         <p>Reputation: <?=$user->reputation?></p>
                         <small>You earn reputation by being active at this website</small>
+                        <p>Impressions: <?=$impressions?></p>
                     </div>
                 </div>
             </div>

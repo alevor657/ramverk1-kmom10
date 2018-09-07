@@ -46,7 +46,7 @@ class TagsController implements InjectionAwareInterface
 
     public function getSpecificTag($tagId)
     {
-        $this->di->get('user')->checkLogin();
+        // $this->di->get('user')->checkLogin();
         $data = $this->tag->getTagDetails($tagId);
 
         $title = "Tag | {$data["tagText"]}";

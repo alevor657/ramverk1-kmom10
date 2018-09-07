@@ -48,11 +48,13 @@ class UserController implements InjectionAwareInterface
 
         $questions = $this->user->getRecentQuestions($userId);
         $answers = $this->user->getRecentAnswers($userId);
+        $impressions = $this->user->getImpressionCount($userId);
 
         $this->di->get('view')->add("user/profile", [
                 "user" => $data,
                 "userQuestions" => $questions,
-                "userAnswers" => $answers
+                "userAnswers" => $answers,
+                "impressions" => $impressions
             ]);
         $this->di->get('pageRender')->renderPage(["title" => $title]);
     }
@@ -86,11 +88,13 @@ class UserController implements InjectionAwareInterface
 
         $questions = $this->user->getRecentQuestions($user->id);
         $answers = $this->user->getRecentAnswers($user->id);
+        $impressions = $this->user->getImpressionCount($userId);
 
         $this->di->get('view')->add("user/profileOverview", [
                 "user" => $user,
                 "userQuestions" => $questions,
-                "userAnswers" => $answers
+                "userAnswers" => $answers,
+                "impressions" => $impressions
             ]);
         $this->di->get('pageRender')->renderPage(["title" => $title]);
     }
