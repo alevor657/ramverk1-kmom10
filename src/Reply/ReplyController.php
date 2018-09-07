@@ -29,6 +29,10 @@ class ReplyController implements InjectionAwareInterface
 
         $id = $this->di->get('request')->getPost()["questionId"];
         $this->reply->postReply();
+
+        $userId = $this->di->get('session')->get('userId');
+        $this->di->get('user')->incrementRating($userId);
+
         $this->di->get("response")->redirect("questions/$id");
     }
 

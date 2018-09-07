@@ -40,7 +40,7 @@ namespace Anax\View;
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-auto">
+                        <div class="col-12">
                             <?php if (strlen($post->text) < 140): ?>
                                 <?=$post->text?>
                             <?php else: ?>
@@ -63,6 +63,12 @@ namespace Anax\View;
                             <?php endif ?>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <small class="text-muted mr-2">Replies: <?=$post->replyCount?></small>
+                    <small class="text-muted">Rating: <?=$post->rating?></small>
                 </div>
             </div>
             <hr>

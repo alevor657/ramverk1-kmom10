@@ -62,12 +62,28 @@ class Tag extends ActiveRecordModel implements InjectionAwareInterface
          */
         $data = $this->di->get('db')
             ->connect()
-            ->select('heading, text, user_id, email as userEmail, Question.id as id')
+            ->select('
+                Question.heading,
+                Question.text,
+                Question.user_id,
+                Question.rating,
+                User.email as userEmail,
+                Question.id as id,
+                COUNT(Reply.id) as replyCount
+            ')
             ->from('Question')
             ->join('Question2Tag', 'Question.id = Question2Tag.question_id')
-            ->join('User', 'User.id = user_id')
+            ->join('User', 'User.id = Question.user_id')
+            ->join('Reply', 'Reply.question_id = Question.id')
             ->where('Question2Tag.tag_id = ?')
-            // ->groupBy('')
+            ->groupBy('
+                    Question.heading,
+                    Question.text,
+                    Question.user_id,
+                    Question.rating,
+                    userEmail,
+                    id
+                ')
             ->execute([$tagId])
             ->fetchAll();
 

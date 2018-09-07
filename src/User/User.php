@@ -259,4 +259,13 @@ class User extends ActiveRecordModel implements InjectionAwareInterface
         }
         return $url;
     }
+
+
+
+    public function incrementRating($userId, $points = 1)
+    {
+        $this->find('id', $userId);
+        $this->reputation = $this->reputation + $points;
+        $this->update();
+    }
 }

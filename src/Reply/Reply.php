@@ -47,6 +47,9 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
         $this->reply_to_id = $reply["replyId"] ?? null;
         $this->content = $reply["text"];
         $this->save();
+
+        // Increment question rating
+        $this->di->get('question')->incrementRating($this->question_id);
     }
 
 
@@ -126,6 +129,7 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
 
         $this->find('id', $id);
 
+        $this->di->get('user')->incrementRating($this->user_id, 5);
         // Toggle value
         $this->accepted = 1;
         $this->save();
@@ -143,6 +147,7 @@ class Reply extends ActiveRecordModel implements InjectionAwareInterface
 
         $this->find('id', $id);
 
+        $this->di->get('user')->incrementRating($this->user_id, -5);
         // Toggle value
         $this->accepted = 0;
         $this->save();

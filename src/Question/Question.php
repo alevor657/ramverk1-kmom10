@@ -32,6 +32,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
     public $heading;
     public $text;
     public $user_id;
+    public $rating = 0;
     // public $created;
 
 
@@ -75,6 +76,16 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $question2Tag = new Question2Tag();
             $question2Tag->setDb($this->di->get("db"));
 
+            $replyCount = $this->di->get('db')
+                ->connect()
+                ->select('COUNT(*) as replyCount')
+                ->from('Reply')
+                ->where('question_id = ?')
+                ->execute([$question->id])
+                ->fetch();
+
+            $question->replyCount = $replyCount->replyCount;
+
             $binding = $question2Tag->findAllWhere("question_id = ?", $question->id);
 
             if (!$binding) {
@@ -100,6 +111,7 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $data[] = $question;
         }
 
+        // debug($data);
         return $data;
     }
 
@@ -231,5 +243,14 @@ class Question extends ActiveRecordModel implements InjectionAwareInterface
             $question2Tag->tag_id = $tagObj->id;
             $question2Tag->save();
         }
+    }
+
+
+
+    public function incrementRating($questionId)
+    {
+        $this->find('id', $questionId);
+        $this->rating++;
+        $this->update();
     }
 }

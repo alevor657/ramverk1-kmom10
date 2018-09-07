@@ -97,6 +97,16 @@ class QuestionController implements InjectionAwareInterface
     {
         $this->question->postQuestion();
 
+        $userId = $this->di->get('session')->get('userId');
+        $this->di->get('user')->incrementRating($userId);
+
         $this->di->get("response")->redirect("questions");
+    }
+
+
+
+    public function incrementRating($questionId)
+    {
+        $this->question->incrementRating($questionId);
     }
 }

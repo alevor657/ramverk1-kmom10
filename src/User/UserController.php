@@ -231,4 +231,11 @@ class UserController implements InjectionAwareInterface
         $this->di->get("response")
             ->redirect("user/profile");
     }
+
+
+
+    public function incrementRating($userId, $points = 1)
+    {
+        $this->user->incrementRating($userId, $points);
+    }
 }
