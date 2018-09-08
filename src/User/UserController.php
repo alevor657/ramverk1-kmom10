@@ -88,7 +88,7 @@ class UserController implements InjectionAwareInterface
 
         $questions = $this->user->getRecentQuestions($user->id);
         $answers = $this->user->getRecentAnswers($user->id);
-        $impressions = $this->user->getImpressionCount($userId);
+        $impressions = $this->user->getImpressionCount($user->id);
 
         $this->di->get('view')->add("user/profileOverview", [
                 "user" => $user,

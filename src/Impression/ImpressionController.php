@@ -26,20 +26,23 @@ class ImpressionController implements InjectionAwareInterface
     {
         $this->di->get('user')->checkLogin();
 
-        $userId = $this->di->get('session')->get('userId');
-        $this->impression->upvote($userId, $replyId);
+        $currentUserId = $this->di->get('session')->get('userId');
+        $isSuccess = $this->impression->upvote($currentUserId, $replyId);
 
-        // get author of comment
-        $userId = $this->di->get('db')
-            ->connect()
-            ->select('User.id as userId')
-            ->from('Reply')
-            ->join('User', 'Reply.user_id = User.id')
-            ->execute()
-            ->fetch()
-            ->userId;
+        if ($isSuccess) {
+            // get author of comment
+            $authorId = $this->di->get('db')
+                ->connect()
+                ->select('user_id as userId')
+                ->from('Reply')
+                ->where('id = ?')
+                ->execute([$replyId])
+                ->fetch()
+                ->userId;
 
-        $this->di->get('user')->incrementRating($userId);
+            $this->di->get('user')->incrementRating($authorId);
+        }
+
 
         $questionId = $this->di->get('request')->getGet('questionId');
         $this->di->get('response')->redirect("questions/$questionId");
@@ -52,20 +55,22 @@ class ImpressionController implements InjectionAwareInterface
     {
         $this->di->get('user')->checkLogin();
 
-        $userId = $this->di->get('session')->get('userId');
-        $this->impression->downvote($userId, $replyId);
+        $currentUserId = $this->di->get('session')->get('userId');
+        $isSuccess = $this->impression->downvote($currentUserId, $replyId);
 
-        // get author of comment
-        $userId = $this->di->get('db')
-            ->connect()
-            ->select('User.id as userId')
-            ->from('Reply')
-            ->join('User', 'Reply.user_id = User.id')
-            ->execute()
-            ->fetch()
-            ->userId;
+        if ($isSuccess) {
+            // get author of comment
+            $authorId = $this->di->get('db')
+                ->connect()
+                ->select('user_id as userId')
+                ->from('Reply')
+                ->where('id = ?')
+                ->execute([$replyId])
+                ->fetch()
+                ->userId;
 
-        $this->di->get('user')->incrementRating($userId, -1);
+            $this->di->get('user')->incrementRating($authorId, -1);
+        }
 
         $questionId = $this->di->get('request')->getGet('questionId');
         $this->di->get('response')->redirect("questions/$questionId");

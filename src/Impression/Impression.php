@@ -32,44 +32,60 @@ class Impression extends ActiveRecordModel implements InjectionAwareInterface
 
     public function upvote($userId, $replyId)
     {
-        if ($this->isVotingSelf($replyId)) return;
+        if ($this->isVotingSelf($replyId)) return false;
 
         $hasImpression = $this->hasUserImpression($userId, $replyId);
 
+        $impressionChanged = null;
+
         if ($hasImpression) {
             $this->find('user_id = ? AND reply_id', [$userId, $replyId]);
+
+            $impressionChanged = $this->value != 1;
+
             $this->user_id = $userId;
             $this->reply_id = $replyId;
             $this->value = 1;
             $this->update();
         } else {
+            $impressionChanged = true;
             $this->user_id = $userId;
             $this->reply_id = $replyId;
             $this->value = 1;
             $this->save();
         }
+
+        return $impressionChanged;
     }
 
 
 
     public function downvote($userId, $replyId)
     {
-        if ($this->isVotingSelf($replyId)) return;
+        if ($this->isVotingSelf($replyId)) return false;
 
         $hasImpression = $this->hasUserImpression($userId, $replyId);
 
+        $impressionChanged = null;
+
         if ($hasImpression) {
             $this->find('user_id = ? AND reply_id', [$userId, $replyId]);
+
+            $impressionChanged = $this->value != -1;
+
             $this->user_id = $userId;
             $this->reply_id = $replyId;
             $this->value = -1;
             $this->update();
         } else {
+            $impressionChanged = true;
             $this->user_id = $userId;
             $this->reply_id = $replyId;
             $this->value = -1;
             $this->save();
         }
+
+        return $impressionChanged;
     }
 
 
