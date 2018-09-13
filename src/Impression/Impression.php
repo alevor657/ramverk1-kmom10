@@ -7,7 +7,7 @@ use \Anax\DI\InjectionAwareInterface;
 use \Anax\DI\InjectionAwareTrait;
 
 /**
- * A database driven model.
+ * @SuppressWarnings("camelCase")
  */
 class Impression extends ActiveRecordModel implements InjectionAwareInterface
 {
@@ -32,7 +32,9 @@ class Impression extends ActiveRecordModel implements InjectionAwareInterface
 
     public function upvote($userId, $replyId)
     {
-        if ($this->isVotingSelf($replyId)) return false;
+        if ($this->isVotingSelf($replyId)) {
+            return false;
+        }
 
         $hasImpression = $this->hasUserImpression($userId, $replyId);
 
@@ -62,7 +64,9 @@ class Impression extends ActiveRecordModel implements InjectionAwareInterface
 
     public function downvote($userId, $replyId)
     {
-        if ($this->isVotingSelf($replyId)) return false;
+        if ($this->isVotingSelf($replyId)) {
+            return false;
+        }
 
         $hasImpression = $this->hasUserImpression($userId, $replyId);
 

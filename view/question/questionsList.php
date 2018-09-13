@@ -17,10 +17,9 @@ namespace Anax\View;
         <?php
             $lines = explode("\n", $post->text);
 
-            if (count($lines) > 2) {
-                $post->text = implode("\n", array_slice($lines, 0, 2));
-                // debug($post->text);
-            }
+        if (count($lines) > 2) {
+            $post->text = implode("\n", array_slice($lines, 0, 2));
+        }
         ?>
             <div class="row question-row">
                 <div class="col-lg-3 col-xs-12">
@@ -41,9 +40,9 @@ namespace Anax\View;
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <?php if (strlen($post->text) < 140): ?>
+                            <?php if (strlen($post->text) < 140) : ?>
                                 <?=$post->text?>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <?=substr($post->text, 0, 140)?>
                                 <br>
                                 <a href="<?=url("questions/$post->id")?>">Read more...</a>
