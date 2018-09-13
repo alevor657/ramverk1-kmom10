@@ -10,9 +10,8 @@ namespace Anax\View;
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center"><?=$question->heading?></h5>
-                            <p class="card-text"><?=$question->text?>
-                                <a href="<?= url("questions/$question->id") ?>"> ...</a>
-                            </p>
+                            <?=$question->text?>
+                            <a href="<?= url("questions/$question->id") ?>"> ...</a>
                             <h6 class="card-subtitle mb-2 text-muted"><?=$question->created ?? ''?></h6>
                         </div>
                     </div>
@@ -47,9 +46,8 @@ namespace Anax\View;
                 <?php foreach ($userAnswers as $answer) : ?>
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-text"><?=$answer->content?>
-                                <a href="<?=url("questions/$answer->question_id#$answer->id")?>"> ...</a>
-                            </p>
+                            <?=$answer->content?>
+                            <a href="<?=url("questions/$answer->question_id#$answer->id")?>"> ...</a>
                             <h6 class="card-subtitle mb-2 text-muted"><?=$answer->created ?? ''?></h6>
                         </div>
                     </div>
