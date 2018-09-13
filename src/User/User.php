@@ -193,7 +193,7 @@ class User extends ActiveRecordModel implements InjectionAwareInterface
 
     public function getRecentQuestions($userId)
     {
-        return $this->db
+        $questions = $this->db
             ->connect()
             ->select()
             ->from('Question')
@@ -202,13 +202,19 @@ class User extends ActiveRecordModel implements InjectionAwareInterface
             ->orderBy('Question.created DESC')
             ->execute([$userId])
             ->fetchAll();
+
+        foreach ($questions as &$question) {
+            $question->text = $this->di->get('textfilter')->doFilter($question->text, 'markdown');
+        }
+
+        return $questions;
     }
 
 
 
     public function getRecentAnswers($userId)
     {
-        return $this->db
+        $answers = $this->db
             ->connect()
             ->select()
             ->from('Reply')
@@ -217,6 +223,12 @@ class User extends ActiveRecordModel implements InjectionAwareInterface
             ->orderBy('Reply.created DESC')
             ->execute([$userId])
             ->fetchAll();
+
+        foreach ($answers as &$answer) {
+            $answer->content = $this->di->get('textfilter')->doFilter($answer->content, 'markdown');
+        }
+
+        return $answers;
     }
 
 
