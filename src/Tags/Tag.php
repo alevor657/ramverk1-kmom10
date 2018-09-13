@@ -74,7 +74,7 @@ class Tag extends ActiveRecordModel implements InjectionAwareInterface
             ->from('Question')
             ->join('Question2Tag', 'Question.id = Question2Tag.question_id')
             ->join('User', 'User.id = Question.user_id')
-            ->join('Reply', 'Reply.question_id = Question.id')
+            ->leftJoin('Reply', 'Reply.question_id = Question.id')
             ->where('Question2Tag.tag_id = ?')
             ->groupBy('
                     Question.heading,

@@ -58,7 +58,7 @@ EOT;
                     </a>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">$reply->content</p>
+                    $reply->content
 
                     $replyLink
 
